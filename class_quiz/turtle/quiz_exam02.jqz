@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<hotpot-jquiz-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <rdf:Description rdf:about="">
+    <dc:creator>Colab</dc:creator>
+    <dc:title>&amp;#x003C;img src=&quot;colablogoexam.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;745&quot; height=&quot;213&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;Python Basic 2 Exam</dc:title>
+  </rdf:Description>
+</rdf:RDF><version>7</version>
+
+<data>
+<title>&amp;#x003C;img src=&quot;colablogoexam.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;745&quot; height=&quot;213&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;Python Basic 2 Exam</title>
+
+<timer><seconds>59</seconds><include-timer>0</include-timer></timer>
+
+<reading>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+<reading-text></reading-text>
+
+</reading>
+
+<questions><question-record><question>What is the function to move the turtle to any point of the drawing area?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>move()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto()</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>go()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>To move the turtle which parameter we need to place inside the parenthesis?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>go(x,y)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>move(x,y)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(x,y)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>What is the initial position of turtle?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>x=0, y = 0</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>x=0, y = 10</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>x=10, y = 0</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Which syntax will move the turtle to quadrant 3?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>goto(-50,50)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(-50,-50)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(50,-50)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_no5.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;204&quot; height=&quot;220&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+Which syntax will move the turtle from point  A to point B?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>goto(100,120)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(120,100)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>Goto(120,100)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_no6.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;187&quot; height=&quot;152&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+After drawing a circle turtle moves from point A to point B. How to to draw circle at point B without leaving any movement trace (line)?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;br&amp;#x003E;
+skippy.down()
+skippy.goto(100,200)
+skippy.up()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+skippy.penup()
+skippy.goto(100,200)
+skippy.pendown()</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+skippy.up()
+skippy.goto(100,200)
+skippy.down()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_no7.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;346&quot; height=&quot;271&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E; After drawing the yellow square, please suggest where the turtle should go to draw the green one?&amp;#x003C;br&amp;#x003E;
+skippy.penup()
+skippy._______________
+skippy.pendown()</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>2</question-type><answers><answer><text>goto(50,50)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Look at this picture. When drawing red circle, where the turtle needs to go?
+&amp;#x003C;img src=&quot;exam2_no8.png&quot; alt=&quot;exam2_no8.png&quot; title=&quot;exam2_no8&quot; width=&quot;324&quot; height=&quot;600&quot;/&amp;#x003E;</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>goto(100,200)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(100,0)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(100,-200)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Still on the same picture of no.8. Where the turtle should go to draw green circle?
+</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>goto(100,200)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(100,0)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(100,-200)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Still on the same picture of no.8. Where the turtle should go to draw yellow circle?
+</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>goto(100,200)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(100,0)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>goto(100,-200)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Choose more than one correct statement</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>4</question-type><answers><answer><text>function is combination of code in sequence that work together for one purpose</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>function combines not just code in sequence but with other functions too</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>two or more functions can be combined to create a new function</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers><must-select-all>1</must-select-all></question-record><question-record><question>What is the keyword to create a function?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>def</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>import</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>while</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Which one is a function?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;br&amp;#x003E;
+def name():
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsppass</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+def name:
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsppass</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+def name()
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsppass</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Look at these 3 code lines to move turtle from one point to another point. Which one from the following will combine these 3 code as one function.&amp;#x003C;br&amp;#x003E;
+skippy.penup()
+skippy.goto(200,200)
+skippy.pendown()</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;br&amp;#x003E;
+def move()
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.penup()
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.goto(200,200)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.pendown()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+def move():
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.penup()
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.goto(200,200)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.pendown()</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+def move():
+skippy.penup()
+skippy.goto(200,200)
+skippy.pendown()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>Based on No. 14, if we put x and y as function parameter, which one from the following is correct?&amp;#x003C;br&amp;#x003E;
+</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;br&amp;#x003E;
+def move(x,y):
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.penup()
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.goto(200,200)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.pendown()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+def move(x,y):
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.penup()
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.goto(x,y)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspskippy.pendown()</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+def move(x,y):
+skippy.penup()
+skippy.goto(200,200)
+skippy.pendown()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text></text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>def functionname(): 
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspdo_this&amp;#x003C;br&amp;#x003E;
+how to call the function?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>function name()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>functionname()</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>functionname():</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>A function can carry one or more parameters in the parenthesis (). &amp;#x003C;br&amp;#x003E;
+def addition(num1,num2):
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspnum1+num2
+
+Choose the correct way to calll that function?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>addition()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>addition(1,2)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>addition(num1,num2)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_no15.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;250&quot; height=&quot;239&quot;  /&amp;#x003E;
+How to change background color?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>turtle.bgcolor(&quot;green&quot;)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>turtle bgcolor(&quot;green&quot;)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>turtle.backcolor(color)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_n016.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;250&quot; height=&quot;263&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+How to add picture as background?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>turtle.bgpic(&apos;filename.jpg&apos;)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>turtle.bgpic(&apos;filename.gif&apos;)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>turtle.bgpic(filename.gif)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_no17.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;243&quot; height=&quot;106&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+How to change turtle shape?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.addshape(&apos;bird.gif&apos;)
+turtle.shape(&apos;bird.gif&apos;)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.addshape(&apos;bird.jpg&apos;)
+turtle.shape(&apos;bird.jpg&apos;)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle addshape(&apos;bird.jpg&apos;)
+turtle shape(&apos;bird.jpg&apos;)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;silvercar.gif&quot; alt=&quot;silvercar.gif&quot; title=&quot;silvercar&quot; width=&quot;347&quot; height=&quot;220&quot;/&amp;#x003E;
+silvercar.gif&amp;#x003C;br&amp;#x003E;
+Fill in the blank&amp;#x003C;br&amp;#x003E;
+
+turtle.addshape(______)
+turtle.shape(______)</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>2</question-type><answers><answer><text>&apos;silvercar.gif&apos;</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&quot;silvercar.gif&quot;</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_no18.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;346&quot; height=&quot;106&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+How to make turtle to move superfast?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>turtle.speed(1)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>turtle.speed(10)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>turtle.speed(1000)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_no19.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;346&quot; height=&quot;106&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+How to hide turtle and unhide it?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.hide()
+turtle.show()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.hideturtle()
+turtle.unhideturtle()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.hideturtle()
+turtle.showturtle()</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;exam2_no20.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;248&quot; height=&quot;228&quot;  /&amp;#x003E;
+How to add color fill?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;br&amp;#x003E;
+skippy.fillcolor(&quot;red&quot;)
+skippy.begin_fill()
+skippy.circle(100)
+skippy.end_fill()</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+skippy.fill_color(&quot;red&quot;)
+skippy.begin_fill()
+skippy.circle(100)
+skippy.end_fill()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+skippy.fill_color(&quot;red&quot;)
+skippy.beginfill()
+skippy.circle(100)
+skippy.endfill()</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>What does time.sleep(1) exactly do ?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>time.sleep(1) will make the program go to sleep for 1 second</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>time.sleep(1) will hold the previous code line for 1 second before continuing to the next line</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>time.sleep(1) will make us to wait</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>What module do we need to import before using time.sleep() function?&amp;#x003C;br&amp;#x003E;
+import _____</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>2</question-type><answers><answer><text>time</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>a=5
+b=1
+Choose more than one correct statement that describes between time.sleep(a) and time.sleep(b) ?</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>4</question-type><answers><answer><text>time.sleep(a) wait time is longer than time.sleep(b)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>time.sleep(a) is longer, the program may finish later</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>time.sleep(b) is shorter, program may  finish earlier</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers><must-select-all>1</must-select-all></question-record><question-record><question>What would happen if we change from time.sleep(1) to time.sleep(0.3)</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;img src=&quot;flappy1.gif&quot; alt=&quot;flappy1.gif&quot; title=&quot;flappy1&quot; width=&quot;220&quot; height=&quot;165&quot;/&amp;#x003E;</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;img src=&quot;flappy2.gif&quot; alt=&quot;flappy2.gif&quot; title=&quot;flappy2&quot; width=&quot;220&quot; height=&quot;165&quot;/&amp;#x003E;</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;frame0.gif&quot; alt=&quot;frame0.gif&quot; title=&quot;frame0&quot; width=&quot;256&quot; height=&quot;256&quot;/&amp;#x003E; &amp;#x003C;img src=&quot;frame1.gif&quot; alt=&quot;frame1.gif&quot; title=&quot;frame1&quot; width=&quot;256&quot; height=&quot;256&quot;/&amp;#x003E;&amp;#x003C;img src=&quot;frame2.gif&quot; alt=&quot;frame2.gif&quot; title=&quot;frame2&quot; width=&quot;256&quot; height=&quot;256&quot;/&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+There are three frames of mario, how to animate it?
+
+</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>1</question-type><answers><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.addshape(&apos;frame0.gif&apos;)
+turtle.addshape(&apos;frame1.gif&apos;)
+turtle.addshape(&apos;frame2.gif&apos;)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.addshape(&apos;frame0.gif&apos;)
+turtle.shape(&apos;frame0.gif&apos;)
+time.sleep(0.1)
+turtle.addshape(&apos;frame1.gif&apos;)
+turtle.shape(&apos;frame1.gif&apos;)
+time.sleep(0.1)
+turtle.addshape(&apos;frame2.gif&apos;)
+turtle.shape(&apos;frame2.gif&apos;)</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer><answer><text>&amp;#x003C;br&amp;#x003E;
+while True:
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.addshape(&apos;frame0.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsptime.sleep(0.1)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.addshape(&apos;frame1.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsptime.sleep(0.1)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.addshape(&apos;frame2.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsptime.sleep(0.1)</text><feedback></feedback><correct>0</correct><percent-correct>0</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record><question-record><question>&amp;#x003C;img src=&quot;mariowalk.gif&quot; alt=&quot;mariowalk.gif&quot; title=&quot;mariowalk&quot; width=&quot;590&quot; height=&quot;314&quot;/&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+
+What function needs to be added in order to make the animation moves?&amp;#x003C;br&amp;#x003E;
+
+while True:
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.addshape(&apos;frame0.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.shape(&apos;frame0.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle._____(5)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsptime.sleep(0.1)
+
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.addshape(&apos;frame1.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.shape(&apos;frame1.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle._____(5)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsptime.sleep(0.1)
+
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.addshape(&apos;frame2.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle.shape(&apos;frame2.gif&apos;)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbspturtle._____(5)
+&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsp&amp;#x0026;nbsptime.sleep(0.1)</question><clue></clue><category></category><weighting>100</weighting><fixed>0</fixed><question-type>2</question-type><answers><answer><text>forward</text><feedback></feedback><correct>1</correct><percent-correct>100</percent-correct><include-in-mc-options>1</include-in-mc-options></answer></answers></question-record></questions>
+</data>
+
+<hotpot-config-file>
+<jquiz>
+<exercise-subtitle></exercise-subtitle>
+<instructions></instructions>
+<guess-correct>Correct!</guess-correct>
+<guess-incorrect>Sorry! Try again.</guess-incorrect>
+<partly-incorrect>Your answer is partly wrong: </partly-incorrect>
+<enter-a-guess>Please enter a guess.</enter-a-guess>
+<next-correct-letter>Next correct letter in the answer: </next-correct-letter>
+<correct-answers>Correct answers: </correct-answers>
+<show-answer-caption>Show answer</show-answer-caption>
+<include-hint>1</include-hint>
+<include-show-answer>1</include-show-answer>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<continuous-scoring>1</continuous-scoring>
+<show-correct-first-time>1</show-correct-first-time>
+<shuffle-questions>0</shuffle-questions>
+<shuffle-answers>0</shuffle-answers>
+<show-limited-questions>0</show-limited-questions>
+<questions-to-show>2</questions-to-show>
+<short-answer-tries-on-hybrid-q>2</short-answer-tries-on-hybrid-q>
+<separate-javascript-file>0</separate-javascript-file>
+<case-sensitive>0</case-sensitive>
+<include-keypad>0</include-keypad>
+</jquiz>
+
+<global>
+<your-score-is>Your score is </your-score-is>
+<correct-indicator>:-)</correct-indicator>
+<incorrect-indicator>X</incorrect-indicator>
+<correct-first-time>Questions answered correctly first time: </correct-first-time>
+<completed-so-far>Questions completed so far: </completed-so-far>
+<exercise-completed>You have completed the exercise.</exercise-completed>
+<keypad-characters></keypad-characters>
+<times-up>Your time is over!</times-up>
+<next-ex-caption>=&amp;#x003E;</next-ex-caption>
+<back-caption>&amp;#x003C;=</back-caption>
+<contents-caption>Index</contents-caption>
+<include-next-ex>1</include-next-ex>
+<include-contents>1</include-contents>
+<include-back>0</include-back>
+<contents-url>contents.htm</contents-url>
+<graphic-url></graphic-url>
+<font-face>&quot;Courier New&quot;,&quot;Lucida Console&quot;,Courier,Geneva,Arial,sans-serif</font-face>
+<font-size>medium</font-size>
+<page-bg-color>#ffffff</page-bg-color>
+<title-color>#000000</title-color>
+<ex-bg-color>#f0f0f0</ex-bg-color>
+<text-color>#000000</text-color>
+<link-color>#0000FF</link-color>
+<vlink-color>#0000CC</vlink-color>
+<nav-bar-color>#000000</nav-bar-color>
+<formmail-url>http://yourserver.com/cgi-bin/FormMail.pl</formmail-url>
+<email>you@yourserver.com</email>
+<name-please>Please enter your name:</name-please>
+<user-string-1>one</user-string-1>
+<user-string-2>two</user-string-2>
+<user-string-3>three</user-string-3>
+<header-code></header-code>
+<correct-first-time>Questions answered correctly first time: </correct-first-time>
+<check-caption>Check</check-caption>
+<ok-caption>OK</ok-caption>
+<next-q-caption>=&amp;#x003E;</next-q-caption>
+<last-q-caption>&amp;#x003C;=</last-q-caption>
+<hint-caption>Hint</hint-caption>
+<show-all-questions-caption>Show all questions</show-all-questions-caption>
+<show-one-by-one-caption>Show questions one by one</show-one-by-one-caption>
+<show-also-correct>1</show-also-correct>
+<process-for-rtl>0</process-for-rtl>
+<include-scorm-12>0</include-scorm-12>
+</global>
+</hotpot-config-file>
+</hotpot-jquiz-file>

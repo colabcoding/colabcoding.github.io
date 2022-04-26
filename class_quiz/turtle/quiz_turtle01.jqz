@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<hotpot-jquiz-file>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rdf:Description rdf:about="">
+</rdf:Description>
+</rdf:RDF>
+<version>6</version>
+<data>
+<title>&amp;#x003C;img src=&quot;colablogo.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;504&quot; height=&quot;133&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+Quiz - Turtle Basic</title>
+<timer>
+<include-timer>0</include-timer>
+<seconds>59</seconds>
+</timer>
+<reading>
+<reading-text></reading-text>
+<include-reading>0</include-reading>
+<reading-title></reading-title>
+</reading>
+<questions>
+<question-record>
+<question>What is the name of programming language we learn?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>Thonny</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Python</text>
+<feedback>Correct. Python is the language we learn. It is the most intuitive language, easy for beginners and experts. Turtle is graphical library to introduce computer language and even robotic concept.
+
+&amp;#x003C;img src=&quot;quiz01-pythonlogo.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;387&quot; height=&quot;130&quot;  /&amp;#x003E;</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Turtle</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>What is the name of software to write the code?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>Turtle</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Python</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Thonny</text>
+<feedback>Yes, Thonny is IDE (=Integrated Development Environment) to write Python language. Thonny is easy to use.
+
+&amp;#x003C;img src=&quot;quiz01-thonnylogo.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;225&quot; height=&quot;225&quot;  /&amp;#x003E;</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>Which one is correct?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>import Turtle</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>import turtle</text>
+<feedback>Correct. import is keyword to call the library and turtle is library name. Python is case sensitive language, capitalized letter is not the same with non-capitalized.</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Import turtle as bill</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>Which one is correct?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>bob=turtle.Turtle</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>bob=turtle.Turtle()</text>
+<feedback>Correct. bob is the turtle name. It is called from the turtle library. When called bob will have all functions stored inside Turtle class (class is group of functions)</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>bob=bob Turtle()</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>How to make turtle to move forward?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>bill.forward()</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>bill.forward=100</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>bill.forward(100)</text>
+<feedback>Correct. The distance needs to be provided inside the parenthesis (). When you ask the turtle to move, you need to tell how far it will go.</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>Which one is incorrect?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>bill.forward(50)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>bill.forward(100)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>bill forward(25)</text>
+<feedback>Correct. we need to put dot (.) before calling forward function.</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-07.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;
+
+Look at the picture, that is initial position of turtle. Where the turtle is heading?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>0</text>
+<feedback>Correct. Turtle initial direction  is 0 degree. In fact, after rotated, turtle will always pointing to 0 degree</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>90</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>180</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>270</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-07.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;
+
+From this position, when turtle position is rotated 90 degrees to the left which position is correct?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>The turtle is pointing up&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-08A.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback>Correct</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>The turtle is pointing left&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-08B.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>The turtle is pointing down&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-08C.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-08A.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;
+
+From that position, when turtle is rotated 180 to the right, where the turtle will be heading?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>Turtle is heading right&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-07.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Turtle is heading down&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-08C.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback>Correct. 180 degrees turn will make turtle heading to the opposite direction. From upward to downward</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Turtle is heading left&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-08B.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-08C.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;
+
+From that position, when rotated 90 degrees the left, where the turtle will be heading?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>To the right&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-07.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback>Correct</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>To the left&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-08B.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Going up&amp;#x003C;br&amp;#x003E;&amp;#x003C;img src=&quot;quiz01-08A.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;328&quot;  /&amp;#x003E;</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-11.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;229&quot;  /&amp;#x003E;
+bill the turtle is requested to draw a square with each side 100 steps long.  choose the correct instruction so that bill will draw exactly as exampled above.</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>&amp;#x003C;br&amp;#x003E;
+bill.forward(100)
+bill.left(90)
+bill.forward(50)
+bill.left(90)
+bill.forward(100)
+bill.left(90)
+bill.forward(50)
+bill.left(90)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>&amp;#x003C;br&amp;#x003E;
+bill.forward(100)
+bill.left(90)
+bill.forward(100)
+bill.left(90)
+bill.forward(100)
+bill.left(90)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>&amp;#x003C;br&amp;#x003E;
+bill.forward(100)
+bill.left(90)
+bill.forward(100)
+bill.left(90)
+bill.forward(100)
+bill.left(90)
+bill.forward(100)
+bill.left(90)</text>
+<feedback></feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-12.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;242&quot;  /&amp;#x003E;
+Please choose the correct instruction for bill to draw the triangle like above.</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>&amp;#x003C;br&amp;#x003E;
+bill.forward(100)
+bill.left(120)
+bill.forward(100)
+bill.left(120)
+bill.forward(100)
+bill.left(120)</text>
+<feedback>Correct.</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>&amp;#x003C;br&amp;#x003E;
+bill.forward(100)
+bill.right(120)
+bill.forward(100)
+bill.right(120)
+bill.forward(100)
+bill.right(120)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>&amp;#x003C;br&amp;#x003E;
+bill.forward(100)
+bill.left(90)
+bill.forward(100)
+bill.left(90)
+bill.forward(100)
+bill.left(90)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-13.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;210&quot;  /&amp;#x003E;
+
+bill is requested to draw a circle with radius 150. Please continue the code to instruct bill to draw exactly as requested
+import turtle
+bill=turtle.Turtle()
+...</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>2</question-type>
+<answers>
+<answer><text>bill.circle(150)</text>
+<feedback>Correct</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>ron the turtle can change its size and speed. Which one is correct?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>&amp;#x003C;br&amp;#x003E;
+import turtle
+ron=turtle.Turtle()
+ron shapesize(5)
+ron speed(1000)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>&amp;#x003C;br&amp;#x003E;
+import turtle
+ron=turtle.Turtle()
+ron.size(5)
+ron.speed(1000)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>&amp;#x003C;br&amp;#x003E;
+import turtle
+ron=turtle.Turtle()
+ron.shapesize(5)
+ron.speed(1000)</text>
+<feedback>Correct. shapesize() and speed() are the functions to make the turtle appear larger and to move faster.</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-15.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;300&quot; height=&quot;228&quot;  /&amp;#x003E;
+
+jessie wants to change its color from black to red, fill the blank to tell her how to change color&amp;#x003C;br&amp;#x003E;
+import turtle
+jessie=turtle.Turtle()
+...</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>2</question-type>
+<answers>
+<answer><text>jessie.color(&apos;red&apos;)</text>
+<feedback></feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>jessie.color(&quot;red&quot;)</text>
+<feedback></feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>jessie.color(&apos;Red&apos;)</text>
+<feedback></feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>jessie.color(&quot;Red&quot;)</text>
+<feedback></feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-16.resized.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;500&quot; height=&quot;514&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+Choose multiple correct answers about four quadrants of the drawing canvas</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>4</question-type>
+<answers>
+<answer><text>Quadrant 1
+X positive
+Y positive</text>
+<feedback>Correct</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Quadrant 2
+X positive
+Y negative</text>
+<feedback>Quadrant 2 
+X negative 
+Y positive</feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Quadrant 3
+X negative
+Y negative</text>
+<feedback>Correct</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>Quadrant 4
+X positive
+Y negative</text>
+<feedback>Correct</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-17.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;453&quot; height=&quot;302&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+Looking at the picture, which statement below is correct ?</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>the circle is located at quadrant 2</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>the circle is located at quadrant 1</text>
+<feedback>Correct. Quadrant 1 has X positive and Y Positive</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>the circcle is located at quadrant 4</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>the circle is located at quadrant 3</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+<question-record>
+<question>&amp;#x003C;img src=&quot;quiz01-20.png&quot; alt=&quot;&quot; title=&quot;&quot; width=&quot;420&quot; height=&quot;484&quot;  /&amp;#x003E;&amp;#x003C;br&amp;#x003E;
+Fill the blanks, how to change a background picture?&amp;#x003C;br&amp;#x003E;
+import turtle&amp;#x003C;br&amp;#x003E;
+...</question>
+<clue></clue>
+<category></category>
+<weighting>100</weighting>
+<fixed>0</fixed>
+<question-type>1</question-type>
+<answers>
+<answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.bgpic(&apos;background.jpg&apos;)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.bgpic(&apos;background&apos;)</text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text>&amp;#x003C;br&amp;#x003E;
+turtle.bgpic(&apos;background.gif&apos;)</text>
+<feedback>Correct. Turtle only read gif file</feedback>
+<correct>1</correct>
+<percent-correct>100</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer><answer><text></text>
+<feedback></feedback>
+<correct>0</correct>
+<percent-correct>0</percent-correct>
+<include-in-mc-options>1</include-in-mc-options>
+</answer></answers>
+</question-record>
+</questions></data>
+<hotpot-config-file>
+<global>
+<separate-js-file>0</separate-js-file>
+<clue-caption>Clue</clue-caption>
+<next-q-caption>=&amp;#x003E;</next-q-caption>
+<last-q-caption>&amp;#x003C;=</last-q-caption>
+<incorrect-indicator>X</incorrect-indicator>
+<font-size>small</font-size>
+<include-next-ex>1</include-next-ex>
+<restart-caption>Restart</restart-caption>
+<contents-url>contents.htm</contents-url>
+<include-timer>0</include-timer>
+<font-face>Geneva,Arial,sans-serif</font-face>
+<include-scorm-12>0</include-scorm-12>
+<user-string-3>three</user-string-3>
+<show-correct-first-time>0</show-correct-first-time>
+<user-string-2>two</user-string-2>
+<user-string-1>one</user-string-1>
+<vlink-color>#0000CC</vlink-color>
+<title-color>#000033</title-color>
+<correct-indicator>:-)</correct-indicator>
+<contents-caption>Index</contents-caption>
+<show-all-questions-caption>Show all questions</show-all-questions-caption>
+<undo-caption>Undo</undo-caption>
+<header-code></header-code>
+<hint-caption>Hint</hint-caption>
+<check-button-caption>Check</check-button-caption>
+<email>you@yourserver.com</email>
+<show-one-by-one-caption>Show questions one by one</show-one-by-one-caption>
+<name-please>Please enter your name:</name-please>
+<formmail-url>http://yourserver.com/cgi-bin/FormMail.pl</formmail-url>
+<next-ex-caption>=&amp;#x003E;</next-ex-caption>
+<back-caption>&amp;#x003C;=</back-caption>
+<text-color>#000000</text-color>
+<page-bg-color>#ffffff</page-bg-color>
+<times-up>Your time is over!</times-up>
+<nav-bar-color>#000066</nav-bar-color>
+<include-contents>1</include-contents>
+<your-score-is>Your score is </your-score-is>
+<graphic-url></graphic-url>
+<link-color>#0000FF</link-color>
+<keypad-characters></keypad-characters>
+<show-also-correct>1</show-also-correct>
+<correct-first-time>Questions answered correctly first time: </correct-first-time>
+<include-cgi>0</include-cgi>
+<ex-bg-color>#bbbbee</ex-bg-color>
+<ok-caption>OK</ok-caption>
+<process-for-rtl>0</process-for-rtl>
+<check-caption>Check</check-caption>
+<include-back>1</include-back>
+<next-correct-letter>Next correct letter is: </next-correct-letter>
+</global>
+<jquiz>
+<next-caption>Next</next-caption>
+<instructions>Python Turtle Quiz</instructions>
+<enter-a-guess>Please enter a guess, then check.</enter-a-guess>
+<correct-list>Correct answers:</correct-list>
+<completed-so-far>Completed so far:</completed-so-far>
+<header-code></header-code>
+<include-hint>0</include-hint>
+<include-keypad>0</include-keypad>
+<short-answer-tries-on-hybrid-q>2</short-answer-tries-on-hybrid-q>
+<partly-incorrect>Your answer is partly incorrect.</partly-incorrect>
+<guess-incorrect>Not perfect yet. Please try again.</guess-incorrect>
+<case-sensitive>0</case-sensitive>
+<continuous-scoring>1</continuous-scoring>
+<next-ex-url>nextpage.htm</next-ex-url>
+<send-email>0</send-email>
+<show-also-correct>1</show-also-correct>
+<exercise-subtitle>Python Turtle Quiz</exercise-subtitle>
+<exercise-completed>You have completed the exercise.</exercise-completed>
+<questions-to-show>10</questions-to-show>
+<shuffle-answers>0</shuffle-answers>
+<guess-correct>Correct!</guess-correct>
+<next-correct-letter>Next correct letter is: </next-correct-letter>
+<show-limited-questions>0</show-limited-questions>
+<shuffle-questions>0</shuffle-questions>
+<include-show-answer>1</include-show-answer>
+<show-correct-first-time>0</show-correct-first-time>
+<separate-javascript-file>0</separate-javascript-file>
+<delete-caption>Delete This Flashcard</delete-caption>
+<show-answer-caption>Show Answer</show-answer-caption>
+</jquiz>
+</hotpot-config-file>
+
+</hotpot-jquiz-file>
