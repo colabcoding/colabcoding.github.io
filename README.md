@@ -1,15 +1,16 @@
-# Welcome to Colab Coding GitHub Pages
+# Welcome to Colab Coding
+The fun place to learn coding
 
-## Python Basic
-* Python Basic Variables, Data Type, Loop, List, Comparison [Python Basic](https://colabcoding.github.io/python/quiz_basicpython.htm).
-* EXAM Python Basic 1 [Basic 1](https://colabcoding.github.io/python/quiz_basicconcept.htm).
-* EXAM Python Basic 2 [Basic 2](https://colabcoding.github.io/python/quiz_basicconcept2.htm).
-* EXAM Python Basic 3 [Basic 3](https://colabcoding.github.io/python/quiz_basicconcept3.htm).
+Magnetica Square A 21 Lippo Cikarang
 
-## Python Turtle
-* EXAM Turtle Level 1 [Turtle Level 1](https://colabcoding.github.io/turtle1/index.htm).
-* EXAM Turtle Level 2 [Turtle Level 2](https://colabcoding.github.io/turtle2/index.htm).
-* EXAM Turtle Level 3 [Turtle Level 3](https://colabcoding.github.io/turtle3/index.htm).
+#### Apa itu coding, apakah anak akan menjadi programmer?
+Coding didefinisikan sebagai aktivitas untuk menyusun instruksi yang terstruktur agar dapat dipahami dan dapat dijalankan oleh komputer. 
 
-## Coding Graphics
-* Coding Graphics Evaluation [Coding Graphics Level 1](https://colabcoding.github.io/graphics/index.htm).
+#### Apa manfaat belajar coding bagi anak-anak?
+Mempelajari coding mengajarkan anak-anak kemampuan untuk memecahkan masalah.
+
+#### Berapa usia minimal untuk belajar coding?
+Penelitian menunjukkan usia ideal untuk belajar coding adalah 8 tahun karena anak memiliki konsentrasi dalam waktu yang lebih panjang, mmemahami instruksi dan 
+
+#### Berapa lama kelas coding dilangsungkan?
+Mulai dari 45 hingga 60 menit selama 1 kali per minggu.
