@@ -55,7 +55,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 
 <a id="item-8"></a>
 ## Bagaimana tentang hari dan jam kelas?
-[Back](#item-0)
+Schedule kelas mulai Juni 2024. 🟢 slot kelas available, 😄 kelas terjadwal. [Back](#item-0)
 
 | Hari dan jam | 7:30    | 9:00    | 10:00          | 11:00   | 13:00   | 14:00   | 15:00          | 18:00          | 19:00          |
 |--------------|---------|---------|----------------|---------|---------|---------|----------------|----------------|----------------|
@@ -69,15 +69,14 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 
 <a id="item-9"></a>
 ## Berapa biaya untuk kelas coding?
-[Back](#item-0)
+Biaya peserta baru sejak Juni 2024. Biaya belum termasuk pembelian equipment untuk topik aplikasi Microcontroller, Game Console, Robotic dan IoT. [Back](#item-0)
 
 | Kelas Umum          | Aplikasi                                 | Biaya per kelas | Biaya per 1 term = 10x |
 |---------------------|------------------------------------------|-----------------:|------------------------:|
-| Scratch             | Games, Animasi, Musik                    | 85,000          |  850,000               |
-| Python Beginner     | Games, Desktop, Microcontroller          | 95,000          |  950,000               |
+| Scratch             | Games, Animasi, Musik                    | 80,000          |  800,000               |
+| Python Beginner     | Games, Desktop, Microcontroller          | 90,000          |  900,000               |
 | Python Intermediate | Game Console, Robotic, IoT               | 100,000         |  1,000,000             |
-| Python Advanced     | Data Analysis, Computer Vision           | 120,000         |  1,200,000             |
-
+| Python Advanced     | Data Analysis, Computer Vision           | 110,000         |  1,100,000             |
 
 <a id="item-10"></a>
 ## Bagaimana simulasi biaya?
@@ -86,9 +85,9 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 | Simulasi Biaya                | Jumlah (Rp.) | Catatan                    |
 |-------------------------------|--------------:|----------------------------|
 | Biaya pendaftaran             |  200,000     | Bayar 1x                   |
-| Biaya 1 term (10x sesi kelas) |  850,000     | Contoh untuk kelas Scratch |
+| Biaya 1 term (10x sesi kelas) |  800,000     | Contoh untuk kelas Scratch |
 | Buku                          |  60,000      | Buku panduan               |
-| Total biaya pertama           |  1,110,000   |                            |
+| Total biaya pertama           |  1,060,000   |                            |
 |                               |              |                            |
 | Biaya term selanjutnya        |  850,000     | untuk 10 term berikutnya   |
 
