@@ -1,5 +1,4 @@
-# Welcome to Colab Coding
-## Fit for Future Need
+# Kenali kami lebih jauh melalui percakapan tanya jawab berikut
 
 Click untuk lompat ke section:
 [Biaya](#Berapa-biaya-untuk-kelas-coding?)
@@ -68,3 +67,32 @@ Simulasi biaya
 | Python Intermediate                            | Game Console, Robotic, IoT      | 8 term atau lebih |
 | Python Advanced                                | Data Analysis, Computer Vision  | 8 term atau lebih |
 | *1 term kira-kira selesai dalam waktu 12 bulan |                                 |                   |
+
+#### Kurikulum
+| Category                        | Topic                        | Aspect to develop | Scratch | Python Beginner | Python Intermediate | Python Advanced |
+|---------------------------------|------------------------------|-------------------|---------|-----------------|---------------------|-----------------|
+| A. Fundamentals                 | 1. Variables                 | Cognitive         | X       | X               | X                   | X               |
+|                                 | 2. Data Types                |                   | X       | X               | X                   | X               |
+|                                 | 3. Loops                     |                   | X       | X               | X                   | X               |
+|                                 | 4. Comparison                |                   | X       | X               | X                   | X               |
+|                                 | 5. Conditions                |                   | X       | X               | X                   | X               |
+|                                 | 6. If Statements             |                   | X       | X               | X                   | X               |
+|                                 | 7. Function                  |                   | X       | X               | X                   | X               |
+| B. Data Structure               | 1. List and Index            | Cognitive         |         | X               | X                   | X               |
+|                                 | 2. Dictionary                |                   |         |                 | X                   | X               |
+| C. Debugging                    | 1. Error Messages            | Reflective        |         | X               | X                   | X               |
+|                                 | 2. Exceptions Handling       |                   |         |                 | X                   | X               |
+| D. Object Oriented Programming  | 1. Class                     | Abstraction       |         |                 |                     | X               |
+|                                 | 2. Inheritance               |                   |         |                 |                     | X               |
+| E. Specific Instruction Library | 1. Graphical Interface       | Cognitive         |         | X               |                     |                 |
+|                                 | 2. Input/Output              |                   |         | X               | X                   |                 |
+|                                 | 3. Numerical Array           |                   |         |                 |                     | X               |
+|                                 | 4. Dataframes                |                   |         |                 |                     | X               |
+|                                 | 5. Computer Vision           |                   |         |                 |                     | X               |
+|                                 | 6. Scientific                |                   |         |                 |                     | X               |
+| F. Evaluation                   | 1. Homework                  | Cognitive         | X       | X               | X                   | X               |
+|                                 | 2. Individual/Group Projects | Social            | X       | X               | X                   | X               |
+|                                 | 3. Student Presentations     | Social            | X       | X               | X                   | X               |
+|                                 | 4. Code Competition          | Social            | X       | X               | X                   | X               |
+|                                 | 5. Exam and Certification    | Cognitive         | X       | X               | X                   | X               |
+
