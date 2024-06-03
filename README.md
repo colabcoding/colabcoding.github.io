@@ -89,7 +89,7 @@ Biaya peserta baru sejak Juni 2024. Biaya belum termasuk pembelian equipment unt
 | Buku                          |  60,000      | Buku panduan               |
 | Total biaya pertama           |  1,060,000   |                            |
 |                               |              |                            |
-| Biaya term selanjutnya        |  850,000     | untuk 10 term berikutnya   |
+| Biaya term selanjutnya        |  800,000     | untuk 10 term berikutnya   |
 
 
 <a id="item-11"></a>
