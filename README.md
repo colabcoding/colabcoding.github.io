@@ -55,6 +55,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 
 <a id="item-8"></a>
 ## Bagaimana tentang hari dan jam kelas?
+
 [Back](#item-0)
 | Hari dan jam | 7:30    | 9:00    | 10:00          | 11:00   | 13:00   | 14:00   | 15:00          | 18:00          | 19:00          |
 |--------------|---------|---------|----------------|---------|---------|---------|----------------|----------------|----------------|
@@ -68,6 +69,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 
 <a id="item-9"></a>
 ## Berapa biaya untuk kelas coding?
+
 [Back](#item-0)
 | Kelas Umum          | Aplikasi                                 | Biaya per kelas | Biaya per 1 term = 10x |
 |---------------------|------------------------------------------|-----------------:|------------------------:|
@@ -79,6 +81,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 
 <a id="item-10"></a>
 ## Bagaimana simulasi biaya?
+
 [Back](#item-0)
 | Simulasi Biaya                | Jumlah (Rp.) | Catatan                    |
 |-------------------------------|--------------:|----------------------------|
@@ -92,6 +95,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 
 <a id="item-11"></a>
 ## Waktu belajar
+
 [Back](#item-0)
 | Kelas Umum                                     | Aplikasi                        | Durasi*           |
 |------------------------------------------------|---------------------------------|-------------------|
@@ -104,6 +108,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 
 <a id="item-12"></a>
 ## Kurikulum
+
 [Back](#item-0)
 | Category                        | Topic                        | Aspect to develop | Scratch | Python Beginner | Python Intermediate | Python Advanced |
 |---------------------------------|------------------------------|-------------------|:---------:|:-----------------:|:---------------------:|:-----------------:|
