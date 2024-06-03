@@ -97,13 +97,13 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 ## Waktu belajar
 [Back](#item-0)
 
+
 | Kelas Umum                                     | Aplikasi                        | Durasi*           |
 |------------------------------------------------|---------------------------------|-------------------|
 | Scratch                                        | Games, Animasi, Musik           | 4 term atau lebih |
 | Python Beginner                                | Games, Desktop, Microcontroller | 4 term atau lebih |
 | Python Intermediate                            | Game Console, Robotic, IoT      | 8 term atau lebih |
 | Python Advanced                                | Data Analysis, Computer Vision  | 8 term atau lebih |
-*1 term kira-kira selesai dalam waktu 12 bulan
 
 
 <a id="item-12"></a>
