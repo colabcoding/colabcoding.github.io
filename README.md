@@ -30,14 +30,14 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 
 ## Bagaimana tentang hari dan jam kelas ?
 
-| Hari dan jam | 7:30 | 9:00 | 10:00 | 11:00 | 13:00 | 14:00 | 15:00 | 18:00 | 19:00 |
-|--------------|------|------|-------|-------|-------|-------|-------|-------|-------|
-| Senin        |      |      |       |       |       |       |       |       |       |
-| Selasa       |      |      |       |       |       |       |       |       |       |
-| Rabu         |      |      |       |       |       |       |       |       |       |
-| Kamis        |      |      |       |       |       |       |       |       |       |
-| Jumat        |      |      |       |       |       |       |       |       |       |
-| Sabtu        |      |      |       |       |       |       |       |       |       |
+| Hari dan jam | 7:30    | 9:00    | 10:00          | 11:00   | 13:00   | 14:00   | 15:00          | 18:00          | 19:00          |
+|--------------|---------|---------|----------------|---------|---------|---------|----------------|----------------|----------------|
+| Senin        |         |         |                |         |         |         |                | :green_circle: | :green_circle: |
+| Selasa       |         |         |                |         |         |         |                | :smile:        | :green_circle: |
+| Rabu         |         |         |                |         |         |         |                | :green_circle: | :green_circle: |
+| Kamis        |         |         |                |         |         |         |                | :green_circle: | :green_circle: |
+| Jumat        |         |         |                |         |         |         |                | :green_circle: | :green_circle: |
+| Sabtu        | :smile: | :smile: | :green_circle: | :smile: | :smile: | :smile: | :green_circle: |                |                |
 
 ## Berapa biaya untuk kelas coding?
 
