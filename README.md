@@ -1,8 +1,7 @@
 # Colab Coding
-## Kenali kami lebih jauh melalui percakapan tanya jawab berikut
 
-## Apa itu coding, apakah anak akan harus jadi programmer?
-Coding atau programming didefinisikan sebagai aktivitas untuk menulis susunan instruksi dalam sebuah bahasa yang dapat dipahami dan dapat dijalankan oleh komputer. Anak-anak akan memiliki pengalaman baru untuk berinteraksi dengan komputer, menulis program untuk hasil yang diharapkan. Literasi bahasa program ini kelak akan dibutuhkan dalam jenjang pendidikan yang lebih tinggi, misalnya Teknik, Management, Akuntansi, Ilmu Hayati, Bahasa bahkan Medis. Kemampuan coding, bermanfaat untuk memperluas pilihan lapangan pekerjaan apapun dan bagi perusahaan, karyawan yang memiliki kemampuan coding adalah nilai plus. Kemampuan ini perlu dipersiapkan sejak dini.
+## Apa itu coding, apakah anak akan harus jadi programmer, seberapa penting?
+Coding atau programming didefinisikan sebagai aktivitas untuk menulis susunan instruksi dalam sebuah bahasa yang dapat dipahami dan dapat dijalankan oleh komputer. Anak-anak akan memiliki pengalaman baru untuk berinteraksi dengan komputer, menulis program untuk mendapatkan hasil yang diharapkan. Seperti bahasa Inggris yang merupakan bahasa internasional dalam dunia pendidikan dan profesi, literasi bahasa pemrograman ini kelak akan dibutuhkan dalam jenjang pendidikan yang lebih tinggi, misalnya Teknik, Management, Akuntansi, Ilmu Hayati, Bahasa bahkan Medis. Dalam kondisi lapangan pekerjaan yang semakin sempit dan kompetitif, kemampuan coding bermanfaat untuk memperluas pilihan lapangan pekerjaan apapun dan bagi perusahaan, karyawan yang memiliki kemampuan coding adalah nilai plus. Oleh karena itu kemampuan ini perlu dipersiapkan sejak dini.
 
 ## Apa manfaat belajar coding bagi anak-anak?
 Belajar coding memberikan kesempatan anak-anak untuk mengasah kemampuan memecahkan masalah (Problem-Solving Skills). Anak-anak belajar untuk memecahkan permasalahan menjadi tahapan-tahapan dan membuat penyelesaiannya. Menstimulasi kreativitas anak-anak saat membuat games, animasi dan imajinasi. Dan anak-anak belajar untuk bersosialisasi dengan saling bekerjasama di dalam kelompok untuk menyelesaikan sebuah tugas. Belajar coding juga mengasah kemampuan logis, matematis dan percaya diri anak-anak.
@@ -13,7 +12,7 @@ Penelitian menunjukkan usia ideal untuk belajar coding adalah 8 tahun. Pada usia
 ## Bagaimana jika usianya 7 tahun atau lebih muda?
 Untuk kelompok usia lebih muda, aktivitas coding lebih banyak dilakukan dengan metode "unplugged". Melalui metode ini, konsep coding seperti algoritma, sequencing, loops dan conditional diajarkan tanpa menggunakan komputer. Untuk saat ini Colab Coding hanya membuka kelas coding untuk anak dengan usia minimal 8 tahun.
 
-## Bagaimana tentang durasi dan frekuensi kelas coding?
+## Bagaimana tentang durasi kelas dan frekuensi kelas coding?
 Durasi atau panjang satu sesi kelas mengikuti tingkatan dari anak. Durasi untuk pembelajar mula adalah 45 menit. Untuk tingkatan selanjutnya 60 menit. Kelas coding diadakan sebanyak 1x per minggu.
 
 ## Apakah kelas privat lebih baik dari kelas umum?
@@ -42,7 +41,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 ## Berapa biaya untuk kelas coding?
 
 | Kelas Umum          | Aplikasi                                 | Biaya per kelas | Biaya per 1 term = 10x |
-|---------------------|------------------------------------------|-----------------|------------------------|
+|---------------------|------------------------------------------|-----------------:|------------------------:|
 | Scratch             | Games, Animasi, Musik                    | 85,000          |  850,000               |
 | Python Beginner     | Games, Desktop, Microcontroller          | 95,000          |  950,000               |
 | Python Intermediate | Game Console, Robotic, IoT               | 100,000         |  1,000,000             |
@@ -51,7 +50,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 ## Simulasi biaya
 
 | Simulasi Biaya                | Jumlah (Rp.) | Catatan                    |
-|-------------------------------|--------------|----------------------------|
+|-------------------------------|--------------:|----------------------------|
 | Biaya pendaftaran             |  200,000     | Bayar 1x                   |
 | Biaya 1 term (10x sesi kelas) |  850,000     | Contoh untuk kelas Scratch |
 | Buku                          |  60,000      | Buku panduan               |
@@ -67,31 +66,31 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 | Python Beginner                                | Games, Desktop, Microcontroller | 4 term atau lebih |
 | Python Intermediate                            | Game Console, Robotic, IoT      | 8 term atau lebih |
 | Python Advanced                                | Data Analysis, Computer Vision  | 8 term atau lebih |
-| *1 term kira-kira selesai dalam waktu 12 bulan |                                 |                   |
+*1 term kira-kira selesai dalam waktu 12 bulan
 
 ## Kurikulum
 
 | Category                        | Topic                        | Aspect to develop | Scratch | Python Beginner | Python Intermediate | Python Advanced |
-|---------------------------------|------------------------------|-------------------|---------|-----------------|---------------------|-----------------|
+|---------------------------------|------------------------------|-------------------|:---------:|:-----------------:|:---------------------:|:-----------------:|
 | A. Fundamentals                 | 1. Variables                 | Cognitive         | X       | X               | X                   | X               |
-|                                 | 2. Data Types                |                   | X       | X               | X                   | X               |
-|                                 | 3. Loops                     |                   | X       | X               | X                   | X               |
-|                                 | 4. Comparison                |                   | X       | X               | X                   | X               |
-|                                 | 5. Conditions                |                   | X       | X               | X                   | X               |
-|                                 | 6. If Statements             |                   | X       | X               | X                   | X               |
-|                                 | 7. Function                  |                   | X       | X               | X                   | X               |
+|                                 | 2. Data Types                | Cognitive         | X       | X               | X                   | X               |
+|                                 | 3. Loops                     | Cognitive         | X       | X               | X                   | X               |
+|                                 | 4. Comparison                | Cognitive         | X       | X               | X                   | X               |
+|                                 | 5. Conditions                | Cognitive         | X       | X               | X                   | X               |
+|                                 | 6. If Statements             | Cognitive         | X       | X               | X                   | X               |
+|                                 | 7. Function                  | Cognitive         | X       | X               | X                   | X               |
 | B. Data Structure               | 1. List and Index            | Cognitive         |         | X               | X                   | X               |
-|                                 | 2. Dictionary                |                   |         |                 | X                   | X               |
+|                                 | 2. Dictionary                | Cognitive         |         |                 | X                   | X               |
 | C. Debugging                    | 1. Error Messages            | Reflective        |         | X               | X                   | X               |
-|                                 | 2. Exceptions Handling       |                   |         |                 | X                   | X               |
+|                                 | 2. Exceptions Handling       | Reflective        |         |                 | X                   | X               |
 | D. Object Oriented Programming  | 1. Class                     | Abstraction       |         |                 |                     | X               |
-|                                 | 2. Inheritance               |                   |         |                 |                     | X               |
+|                                 | 2. Inheritance               | Abstraction       |         |                 |                     | X               |
 | E. Specific Instruction Library | 1. Graphical Interface       | Cognitive         |         | X               |                     |                 |
-|                                 | 2. Input/Output              |                   |         | X               | X                   |                 |
-|                                 | 3. Numerical Array           |                   |         |                 |                     | X               |
-|                                 | 4. Dataframes                |                   |         |                 |                     | X               |
-|                                 | 5. Computer Vision           |                   |         |                 |                     | X               |
-|                                 | 6. Scientific                |                   |         |                 |                     | X               |
+|                                 | 2. Input/Output              | Cognitive         |         | X               | X                   |                 |
+|                                 | 3. Numerical Array           | Cognitive         |         |                 |                     | X               |
+|                                 | 4. Dataframes                | Cognitive         |         |                 |                     | X               |
+|                                 | 5. Computer Vision           | Cognitive         |         |                 |                     | X               |
+|                                 | 6. Scientific                | Cognitive         |         |                 |                     | X               |
 | F. Evaluation                   | 1. Homework                  | Cognitive         | X       | X               | X                   | X               |
 |                                 | 2. Individual/Group Projects | Social            | X       | X               | X                   | X               |
 |                                 | 3. Student Presentations     | Social            | X       | X               | X                   | X               |
