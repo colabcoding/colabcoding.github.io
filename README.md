@@ -1,10 +1,6 @@
 # Colab Coding
 ## Kenali kami lebih jauh melalui percakapan tanya jawab berikut
 
-Click untuk lompat ke section:
-[Biaya](##Berapa-biaya-untuk-kelas-coding?),
-[Kurikulum](##Kurikulum)
-
 ## Apa itu coding, apakah anak akan harus jadi programmer?
 Coding atau programming didefinisikan sebagai aktivitas untuk menulis susunan instruksi dalam sebuah bahasa yang dapat dipahami dan dapat dijalankan oleh komputer. Anak-anak akan memiliki pengalaman baru untuk berinteraksi dengan komputer, menulis program untuk hasil yang diharapkan. Literasi bahasa program ini kelak akan dibutuhkan dalam jenjang pendidikan yang lebih tinggi, misalnya Teknik, Management, Akuntansi, Ilmu Hayati, Bahasa bahkan Medis. Kemampuan coding, bermanfaat untuk memperluas pilihan lapangan pekerjaan apapun dan bagi perusahaan, karyawan yang memiliki kemampuan coding adalah nilai plus. Kemampuan ini perlu dipersiapkan sejak dini.
 
@@ -33,7 +29,6 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 | 14 - 16 | Python      | IoT, Data Analysis, Computer Vision      |
 
 ## Bagaimana tentang hari dan jam kelas ?
-Berikut ini adalah time table dari kelas coding per Mei 2024. 🟢 waktu tersedia dan 😄 waktu digunakan untuk kelas.
 | Hari dan jam | 7:30 | 9:00 | 10:00 | 11:00 | 13:00 | 14:00 | 15:00 | 18:00 | 19:00 |
 |--------------|------|------|-------|-------|-------|-------|-------|-------|-------|
 | Senin        |      |      |       |       |       |       |       |       |       |
@@ -45,7 +40,7 @@ Berikut ini adalah time table dari kelas coding per Mei 2024. 🟢 waktu tersedi
 
 ## Berapa biaya untuk kelas coding?
 | Kelas Umum          | Aplikasi                                 | Biaya per kelas | Biaya per 1 term = 10x |
-|---------------------|------------------------------------------|-----------------:|------------------------:|
+|---------------------|------------------------------------------|-----------------|------------------------|
 | Scratch             | Games, Animasi, Musik                    | 85,000          |  850,000               |
 | Python Beginner     | Games, Desktop, Microcontroller          | 95,000          |  950,000               |
 | Python Intermediate | Game Console, Robotic, IoT               | 100,000         |  1,000,000             |
@@ -53,7 +48,7 @@ Berikut ini adalah time table dari kelas coding per Mei 2024. 🟢 waktu tersedi
 
 ## Simulasi biaya
 | Simulasi Biaya                | Jumlah (Rp.) | Catatan                    |
-|-------------------------------|--------------:|----------------------------|
+|-------------------------------|--------------|----------------------------|
 | Biaya pendaftaran             |  200,000     | Bayar 1x                   |
 | Biaya 1 term (10x sesi kelas) |  850,000     | Contoh untuk kelas Scratch |
 | Buku                          |  60,000      | Buku panduan               |
