@@ -29,6 +29,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 | 14 - 16 | Python      | IoT, Data Analysis, Computer Vision      |
 
 ## Bagaimana tentang hari dan jam kelas ?
+
 | Hari dan jam | 7:30 | 9:00 | 10:00 | 11:00 | 13:00 | 14:00 | 15:00 | 18:00 | 19:00 |
 |--------------|------|------|-------|-------|-------|-------|-------|-------|-------|
 | Senin        |      |      |       |       |       |       |       |       |       |
@@ -39,6 +40,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 | Sabtu        |      |      |       |       |       |       |       |       |       |
 
 ## Berapa biaya untuk kelas coding?
+
 | Kelas Umum          | Aplikasi                                 | Biaya per kelas | Biaya per 1 term = 10x |
 |---------------------|------------------------------------------|-----------------|------------------------|
 | Scratch             | Games, Animasi, Musik                    | 85,000          |  850,000               |
@@ -47,6 +49,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 | Python Advanced     | Data Analysis, Computer Vision           | 120,000         |  1,200,000             |
 
 ## Simulasi biaya
+
 | Simulasi Biaya                | Jumlah (Rp.) | Catatan                    |
 |-------------------------------|--------------|----------------------------|
 | Biaya pendaftaran             |  200,000     | Bayar 1x                   |
@@ -57,6 +60,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 | Biaya term selanjutnya        |  850,000     | untuk 10 term berikutnya   |
 
 ## Waktu belajar
+
 | Kelas Umum                                     | Aplikasi                        | Durasi*           |
 |------------------------------------------------|---------------------------------|-------------------|
 | Scratch                                        | Games, Animasi, Musik           | 4 term atau lebih |
@@ -66,6 +70,7 @@ Bahasa pemrograman yang diajarkan memiliki kesamaan dengan program yang dijalank
 | *1 term kira-kira selesai dalam waktu 12 bulan |                                 |                   |
 
 ## Kurikulum
+
 | Category                        | Topic                        | Aspect to develop | Scratch | Python Beginner | Python Intermediate | Python Advanced |
 |---------------------------------|------------------------------|-------------------|---------|-----------------|---------------------|-----------------|
 | A. Fundamentals                 | 1. Variables                 | Cognitive         | X       | X               | X                   | X               |
