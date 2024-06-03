@@ -2,7 +2,7 @@
 ## Fit for Future Need
 
 Click untuk lompat ke section:
-[Biaya](####Berapa-biaya-untuk-kelas-coding?)
+[Biaya](#Berapa-biaya-untuk-kelas-coding?)
 
 #### Apa itu coding, apakah anak akan menjadi programmer?
 Coding atau programming didefinisikan sebagai aktivitas untuk menulis susunan instruksi dalam sebuah bahasa yang dapat dipahami dan dapat dijalankan oleh komputer. 
