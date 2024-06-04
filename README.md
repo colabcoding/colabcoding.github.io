@@ -75,8 +75,8 @@ Biaya peserta baru sejak Juni 2024. Biaya belum termasuk pembelian equipment unt
 |---------------------|------------------------------------------|-----------------:|------------------------:|
 | Scratch             | Games, Animasi, Musik                    | 80,000          |  800,000               |
 | Python Beginner     | Games, Desktop, Microcontroller          | 90,000          |  900,000               |
-| Python Intermediate | Game Console, Robotic,                   | 100,000         |  1,000,000             |
-| Python Advanced     | IoT, Data Analysis, Computer Vision      | 110,000         |  1,100,000             |
+| Python Intermediate | Game Console, Robotic,                   | 95,000          |  950,000               |
+| Python Advanced     | IoT, Data Analysis, Computer Vision      | 100,000         |  1,000,000             |
 
 <a id="item-10"></a>
 ## Bagaimana simulasi biaya?
