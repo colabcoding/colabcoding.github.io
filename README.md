@@ -10,7 +10,6 @@
 - [Apakah kelas privat lebih baik dari kelas umum?](#item-6)
 - [Bahasa pemrograman apa yang diajarkan untuk anak-anak?](#item-7)
 - [Bagaimana tentang hari dan jam kelas?](#item-8)
-- [Berapa biaya untuk kelas coding?](#item-9)
 - [Bagaimana simulasi biaya?](#item-10)
 - [Waktu belajar](#item-11)
 - [Kurikulum](#item-12)
@@ -68,15 +67,6 @@ Schedule kelas mulai Juni 2024. 🟢 slot kelas available, 😄 kelas terjadwal.
 
 
 <a id="item-9"></a>
-## Berapa biaya untuk kelas coding?
-Biaya peserta baru sejak Juni 2024. Biaya belum termasuk pembelian equipment untuk topik aplikasi Microcontroller, Game Console, Robotic dan IoT. [Back](#item-0)
-
-| Kelas Umum          | Aplikasi                                 | Biaya per kelas | Biaya per 1 term = 10x |
-|---------------------|------------------------------------------|-----------------:|------------------------:|
-| Scratch             | Games, Animasi, Musik                    | 80,000          |  800,000               |
-| Python Beginner     | Games, Desktop, Microcontroller          | 90,000          |  900,000               |
-| Python Intermediate | Game Console, Robotic,                   | 95,000          |  950,000               |
-| Python Advanced     | IoT, Data Analysis, Computer Vision      | 100,000         |  1,000,000             |
 
 <a id="item-10"></a>
 ## Bagaimana simulasi biaya?
@@ -85,11 +75,11 @@ Biaya peserta baru sejak Juni 2024. Biaya belum termasuk pembelian equipment unt
 | Simulasi Biaya                | Jumlah (Rp.) | Catatan                    |
 |-------------------------------|--------------:|----------------------------|
 | Biaya pendaftaran             |  200,000     | Bayar 1x                   |
-| Biaya 1 term (10x sesi kelas) |  800,000     | Contoh untuk kelas Scratch |
+| Biaya 1 term (10x sesi kelas) |  1,000,000   | Angka contoh (hub. kontak) |
 | Buku                          |  60,000      | Buku panduan               |
-| Total biaya pertama           |  1,060,000   |                            |
+| Total biaya pertama           |  1,260,000   |                            |
 |                               |              |                            |
-| Biaya term selanjutnya        |  800,000     | untuk 10 term berikutnya   |
+| Biaya term selanjutnya        |  1,000,000     | untuk 10 term berikutnya   |
 
 
 <a id="item-11"></a>
@@ -138,5 +128,5 @@ Biaya peserta baru sejak Juni 2024. Biaya belum termasuk pembelian equipment unt
 
 <a id="item-13"></a>
 ## Free Trial
-Free trial class adalah sarana yang digunakan agar anak dan orang tua mendapat gambaran tentang minat dan respon terhadap materi, penyampaian, sarana dan tempat belajar. Free trial dilakukan selama 30 menit dan dianjurkan untuk membawa laptop meskipun tidak diwajibkan karena tersedia di tempat. Untuk kelas trial hubungi kami di nomor kontak melalui pesan WhatsApp atau email ke colab.cikarang@gmail.com.
+Free trial class adalah sarana yang digunakan agar anak dan orang tua mendapat gambaran tentang minat dan respon terhadap materi, penyampaian, sarana dan tempat belajar. Free trial dilakukan selama 30 menit dan dianjurkan untuk membawa laptop meskipun tidak diwajibkan karena tersedia di tempat. Untuk kelas trial hubungi kami di nomor kontak melalui pesan WhatsApp atau email ke colabcode@outlook.com.
 [Back](#item-0)
