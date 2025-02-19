@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman  # or your chosen theme
+theme: minima  # or your chosen theme
 
 nav:
   - title: "Home"
