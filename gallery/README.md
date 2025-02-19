@@ -1,6 +1,6 @@
-# Image Gallery (4x4 Grid)
+# Activity Photos
 
-This gallery dynamically loads all images from the `images/` folder.
+This gallery dynamically loads all images from the `gallery/` folder.
 
 <style>
   .gallery {
@@ -15,18 +15,24 @@ This gallery dynamically loads all images from the `images/` folder.
   }
 </style>
 
-<div class="gallery" id="imageGallery"></div>
+<div class="gallery" id="imageGallery">Loading images...</div>
 
 <script>
   const imageFolder = 'gallery/'; // Folder where images are stored
-  const imageCount = 16; // Adjust if needed
+  const jsonFile = 'images.json'; // JSON file with image names
 
-  const gallery = document.getElementById('imageGallery');
+  fetch(jsonFile)
+    .then(response => response.json())
+    .then(images => {
+      const gallery = document.getElementById('imageGallery');
+      gallery.innerHTML = ''; // Clear loading text
 
-  for (let i = 1; i <= imageCount; i++) {
-    let img = document.createElement('img');
-    img.src = `${imageFolder}image${i}.jpg`; // Assuming images are named image1.jpg, image2.jpg, etc.
-    img.alt = `Image ${i}`;
-    gallery.appendChild(img);
-  }
+      images.forEach(imageName => {
+        let img = document.createElement('img');
+        img.src = `${imageFolder}${imageName}`;
+        img.alt = imageName;
+        gallery.appendChild(img);
+      });
+    })
+    .catch(error => console.error('Error loading images:', error));
 </script>
