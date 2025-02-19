@@ -1,3 +1,10 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-cayman  # or your chosen theme
+
+nav:
+  - title: "Home"
+    url: /
+  - title: "Gallery"
+    url: /index.html
+
 plugins:
   - jemoji
