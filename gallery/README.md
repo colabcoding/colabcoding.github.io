@@ -1,6 +1,6 @@
 # Activity Photos
 
-This gallery dynamically loads all images from the `gallery/` folder.
+This gallery dynamically loads all images from the current folder.
 
 <style>
   .gallery {
@@ -18,18 +18,18 @@ This gallery dynamically loads all images from the `gallery/` folder.
 <div class="gallery" id="imageGallery">Loading images...</div>
 
 <script>
-  const imageFolder = 'gallery/'; // Folder where images are stored
+  // Since index.md, images, and gallery.json are in the same folder, we leave out any folder prefix.
   const jsonFile = 'images.json'; // JSON file with image names
 
   fetch(jsonFile)
     .then(response => response.json())
     .then(images => {
       const gallery = document.getElementById('imageGallery');
-      gallery.innerHTML = ''; // Clear loading text
+      gallery.innerHTML = ''; // Remove the loading text
 
       images.forEach(imageName => {
         let img = document.createElement('img');
-        img.src = `${imageFolder}${imageName}`;
+        img.src = imageName;  // Directly use the image name (e.g., "image1.jpg")
         img.alt = imageName;
         gallery.appendChild(img);
       });
