@@ -31,7 +31,7 @@
 
       images.forEach(imageName => {
         let img = document.createElement('img');
-        img.src = 'image1.png';  // Ensure this path is correct relative to index.md
+        img.src = imageName;  // Ensure this path is correct relative to index.md
         img.alt = imageName;
         gallery.appendChild(img);
       });
