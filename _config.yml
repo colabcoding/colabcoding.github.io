@@ -1,4 +1,4 @@
-theme: minima  # or your chosen theme
+theme: jekkyl  # or your chosen theme
 
 nav:
   - title: "Home"
