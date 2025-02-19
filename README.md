@@ -13,7 +13,7 @@
 - [Bagaimana simulasi biaya?](#item-10)
 - [Waktu belajar](#item-11)
 - [Kurikulum](#item-12)
-- [Free Trial](#item-13)
+- [Free Trial & Contact](#item-13)
 
 <!-- headings -->
 <a id="item-1"></a>
