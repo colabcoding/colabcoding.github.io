@@ -4,7 +4,7 @@ nav:
   - title: "Home"
     url: /
   - title: "Gallery"
-    url: /index.html
+    url: /activities.html
 
 plugins:
   - jemoji
