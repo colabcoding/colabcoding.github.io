@@ -3,11 +3,11 @@
 <style>
   .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
   .gallery img {
-    width: 100%;
+    width: 200%;
     height: auto;
     border-radius: 5px;
   }
