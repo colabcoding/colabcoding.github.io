@@ -1,4 +1,4 @@
-# Events Photos
+# Class Events
 
 <style>
   .gallery {
