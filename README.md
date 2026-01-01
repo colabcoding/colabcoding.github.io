@@ -128,5 +128,5 @@ Schedule kelas mulai Juni 2024. 🟢 slot kelas available, 😄 kelas terjadwal.
 
 <a id="item-13"></a>
 ## Free Trial
-Free trial class adalah sarana yang digunakan agar anak dan orang tua mendapat gambaran tentang minat dan respon terhadap materi, penyampaian, sarana dan tempat belajar. Free trial dilakukan selama 30 menit dan dianjurkan untuk membawa laptop meskipun tidak diwajibkan karena tersedia di tempat. Untuk kelas trial hubungi kami di nomor kontak melalui pesan WhatsApp atau email ke colabcode@outlook.com.
+Free trial class adalah sarana yang digunakan agar anak dan orang tua mendapat gambaran tentang minat dan respon terhadap materi, penyampaian, sarana dan tempat belajar. Free trial dilakukan selama 30 menit dan dianjurkan untuk membawa laptop meskipun tidak diwajibkan karena tersedia di tempat. Untuk kelas trial hubungi kami di nomor kontak melalui email ke colab.code@outlook.com.
 [Back](#item-0)
