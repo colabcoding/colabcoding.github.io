@@ -7,130 +7,205 @@
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     <style>
-        body { 
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
-            padding: 15px; 
-            background-color: #fdfbfb;
-            max-width: 480px;
-            margin: 0 auto;
-            color: #333;
+        :root {
+            --bg-color: #fdfbfb;
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --border-color: #e0e0e0;
+            --primary-blue: #4a90e2;
+            --accent-orange: #ff9f43;
         }
 
-        /* Branding Header */
+        [data-theme="dark"] {
+            --bg-color: #1a1a1a;
+            --text-color: #f0f0f0;
+            --card-bg: #2d2d2d;
+            --border-color: #444;
+            --primary-blue: #5da2f5;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Roboto, sans-serif; 
+            padding: 15px; 
+            background-color: var(--bg-color);
+            max-width: 480px;
+            margin: 0 auto;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .main-content { flex: 1; }
+
         .brand-header {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             font-size: 0.85rem;
-            color: #666;
+            color: #888;
             margin-bottom: 5px;
         }
-        .brand-header img {
-            height: 18px;
-            width: auto;
-            vertical-align: middle;
-        }
+        .brand-header img { height: 18px; width: auto; }
         
-        h2 { text-align: center; color: #4a90e2; margin-top: 5px; font-size: 1.8rem; margin-bottom: 20px; }
+        h2 { text-align: center; color: var(--primary-blue); margin-top: 5px; }
 
-        .input-row {
-            display: flex;
-            gap: 12px;
-            margin: 20px 0;
-        }
-
+        /* Unified styling for Inputs and Buttons */
         input, button {
             padding: 18px;
             font-size: 1.25rem;
             border-radius: 16px;
-            border: 2px solid #e0e0e0;
+            border: 2px solid var(--border-color);
             box-sizing: border-box;
-            transition: all 0.2s ease;
+            background: var(--card-bg);
+            color: var(--text-color);
+            height: 65px; /* Forced uniform height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        input { background: #fff; width: 100%; }
-        input:focus { border-color: #4a90e2; outline: none; }
+        input { width: 100%; text-align: center; }
+        input:focus { border-color: var(--primary-blue); outline: none; }
+
+        .input-row { display: flex; gap: 12px; margin: 20px 0; }
 
         #minus-btn {
             width: 85px;
-            background-color: #ff9f43;
+            background-color: var(--accent-orange);
             color: white;
             border: none;
-            font-weight: bold;
             font-size: 1.6rem;
+            flex-shrink: 0;
         }
 
         .action-btn {
             width: 100%;
-            background-color: #4a90e2;
+            background-color: var(--primary-blue);
             color: white;
             border: none;
             font-weight: bold;
             cursor: pointer;
+            margin-top: 10px;
         }
 
-        .action-btn:active, #minus-btn:active {
-            transform: scale(0.96);
-        }
+        .share-btn { background-color: #6c5ce7; }
 
         #question-display {
             font-size: 3rem;
             text-align: center;
             font-weight: 700;
             margin: 20px 0;
-            color: #2c3e50;
         }
 
         #output { 
-            background: #fff; 
+            background: var(--card-bg); 
             padding: 15px; 
             border-radius: 16px; 
             margin-top: 20px; 
-            height: 180px; 
+            height: 150px; 
             overflow-y: auto;
-            border: 1px solid #eee;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-            font-size: 0.95rem;
+            border: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            line-height: 1.5;
         }
 
-        .log-entry { margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 5px; line-height: 1.4; }
+        .log-entry { margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px; }
         .correct-msg { color: #27ae60; font-weight: bold; }
         .wrong-msg { color: #e74c3c; font-weight: bold; }
+
+        .leaderboard-box {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 16px;
+            margin-top: 20px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .dark-mode-toggle {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            height: auto;
+            width: auto;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: #888;
+            padding: 20px 0;
+        }
     </style>
 </head>
 <body>
 
-    <div class="brand-header">
-        made with 
-        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"> 
-        Python and 
-        <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" alt="PyScript"> 
-        PyScript
-    </div>
-    <h2>Endless Math Quiz</h2>
-    
-    <div id="setup-area">
-        <input type="text" id="player-name" placeholder="Hi! What's your name?">
-        <button id="start-btn" class="action-btn" py-click="start_game" style="margin-top:12px;">Let's Play!</button>
+    <button class="dark-mode-toggle" id="theme-btn" onclick="toggleTheme()">☀️</button>
+
+    <div class="main-content">
+        <div class="brand-header">
+            made with 
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"> 
+            Python and 
+            <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" alt="PyScript"> 
+            PyScript
+        </div>
+        <h2>Endless Math Quiz</h2>
+        
+        <div id="setup-area">
+            <input type="text" id="player-name" placeholder="Hi! What's your name?">
+            <button id="start-btn" class="action-btn" py-click="start_game">Let's Play!</button>
+            
+            <div id="leaderboard-display" class="leaderboard-box">
+                <strong style="display:block; margin-bottom:10px;">🏆 Leaderboard</strong>
+                <div id="leaderboard-list">Loading...</div>
+            </div>
+        </div>
+
+        <div id="game-area" style="display:none;">
+            <p id="question-display"></p>
+            <div class="input-row">
+                <button id="minus-btn" py-click="toggle_minus">±</button>
+                <input type="number" id="answer-input" inputmode="numeric" placeholder="Enter answer">
+            </div>
+            <button id="submit-btn" class="action-btn" py-click="check_answer">Submit My Answer</button>
+            <div id="output"></div>
+        </div>
     </div>
 
-    <div id="game-area" style="display:none;">
-        <p id="question-display"></p>
-        
-        <div class="input-row">
-            <button id="minus-btn" py-click="toggle_minus">±</button>
-            <input type="number" id="answer-input" inputmode="numeric" placeholder="?">
-        </div>
-        
-        <button id="submit-btn" class="action-btn" py-click="check_answer">Submit My Answer</button>
-        <div id="output"></div>
-    </div>
+    <footer>
+        &copy; Andi Dinata 2026 | Common Share | 
+        <a href="https://colabcoding.github.io" target="_blank" style="color:var(--primary-blue)">colabcoding.github.io</a><br>
+        Follow us: <a href="https://instagram.com/colab.code" target="_blank" style="color:var(--primary-blue)">@colab.code</a>
+    </footer>
+
+<script>
+    function toggleTheme() {
+        const body = document.body;
+        const btn = document.getElementById('theme-btn');
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.removeAttribute('data-theme');
+            btn.innerText = '☀️';
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            btn.innerText = '🌙';
+        }
+    }
+</script>
 
 <script type="py">
 import random
 import time
-from pyscript import document
+import json
+from pyscript import document, window
 
 state = {
     "player": "",
@@ -146,78 +221,89 @@ def start_game(event):
     state["player"] = name if name else "Friend"
     document.querySelector("#setup-area").style.display = "none"
     document.querySelector("#game-area").style.display = "block"
-    log(f"Nice to meet you, {state['player']}! Let's start.")
+    log(f"Good luck, {state['player']}!")
     generate_question()
 
 def toggle_minus(event):
     el = document.querySelector("#answer-input")
     val = el.value
-    if not val:
-        el.value = "-"
-    elif val.startswith("-"):
-        el.value = val[1:]
-    else:
-        el.value = "-" + val
+    if not val: el.value = "-"
+    elif val.startswith("-"): el.value = val[1:]
+    else: el.value = "-" + val
 
 def generate_question():
     state["current_q_start"] = time.time()
-    n1 = random.randint(1, 12)
-    n2 = random.randint(1, 15)
+    n1, n2 = random.randint(1, 15), random.randint(1, 15)
     op = random.choice(state["operators"])
-    
-    question_str = f"{n1} {op} {n2}"
-    state["correct_answer"] = eval(question_str)
-    
-    document.querySelector("#question-display").innerText = f"{question_str} = ?"
+    state["correct_answer"] = eval(f"{n1} {op} {n2}")
+    document.querySelector("#question-display").innerText = f"{n1} {op} {n2} = ?"
     document.querySelector("#answer-input").value = ""
     document.querySelector("#answer-input").focus()
 
 def check_answer(event):
     raw_val = document.querySelector("#answer-input").value.strip()
-    if not raw_val or raw_val == "-":
-        return
-    
+    if not raw_val or raw_val == "-": return
     try:
         user_ans = int(raw_val)
-    except:
-        return
-
+    except: return
+    
     duration = round(time.time() - state["current_q_start"], 2)
-
     if user_ans == state["correct_answer"]:
         state["correct_count"] += 1
-        msg = f"<span class='correct-msg'>Great correct!</span> {user_ans} was right! (took {duration} seconds)"
+        msg = f"<span class='correct-msg'>Great correct!</span> {user_ans} (took {duration}s)"
     else:
         state["incorrect_count"] += 1
-        msg = f"<span class='wrong-msg'>Ups, sorry!</span> The answer was {state['correct_answer']}. (took {duration} seconds)"
+        msg = f"<span class='wrong-msg'>Ups, sorry!</span> Answer was {state['correct_answer']} (took {duration}s)"
+    
+    log(msg, True)
+    if state["incorrect_count"] >= 3: end_game()
+    else: generate_question()
 
-    log(msg, is_html=True)
+def save_score(name, correct, score):
+    data = window.localStorage.getItem("quiz_leaderboard")
+    leaderboard = json.loads(data) if data else []
+    leaderboard.append({"name": name, "correct": correct, "score": score})
+    leaderboard = sorted(leaderboard, key=lambda x: x['correct'], reverse=True)[:5]
+    window.localStorage.setItem("quiz_leaderboard", json.dumps(leaderboard))
 
-    if state["incorrect_count"] >= 3:
-        end_game()
-    else:
-        generate_question()
+def update_leaderboard_ui():
+    data = window.localStorage.getItem("quiz_leaderboard")
+    if not data:
+        document.querySelector("#leaderboard-list").innerText = "No scores yet!"
+        return
+    lb = json.loads(data)
+    html = "".join([f"<div style='margin-bottom:5px;'>{i+1}. {x['name']} - {x['correct']} pts</div>" for i, x in enumerate(lb)])
+    document.querySelector("#leaderboard-list").innerHTML = html
 
 def end_game():
-    total = state["correct_count"]
+    total = state["correct_count"] + state["incorrect_count"]
+    score = round(100 * (state["correct_count"] / total), 1) if total > 0 else 0
+    save_score(state["player"], state["correct_count"], score)
+    
     document.querySelector("#game-area").innerHTML = f"""
-        <div style="text-align:center; padding: 20px;">
+        <div style="text-align:center;" class="leaderboard-box">
             <h3>Game over, {state['player']}!</h3>
-            <p style="font-size: 1.2rem;">You finished with <b>{total}</b> correct answers.</p>
+            <p>Score: <b>{score}%</b> | Correct: <b>{state['correct_count']}</b></p>
             <button onclick="window.location.reload()" class="action-btn">Play Again?</button>
+            <button id="copy-btn" class="action-btn share-btn">Copy Link to Share</button>
         </div>
     """
+    
+    def copy_link(event):
+        window.navigator.clipboard.writeText(window.location.href)
+        document.querySelector("#copy-btn").innerText = "Link Copied! ✅"
+    
+    document.querySelector("#copy-btn").onclick = copy_link
 
 def log(message, is_html=False):
     out = document.querySelector("#output")
     new_entry = document.createElement("div")
     new_entry.className = "log-entry"
-    if is_html:
-        new_entry.innerHTML = message
-    else:
-        new_entry.innerText = message
+    if is_html: new_entry.innerHTML = message
+    else: new_entry.innerText = message
     out.prepend(new_entry)
 
+update_leaderboard_ui()
 </script>
 </body>
 </html>
