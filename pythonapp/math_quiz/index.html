@@ -14,6 +14,7 @@
             --border-color: #e0e0e0;
             --primary-blue: #4a90e2;
             --accent-orange: #ff9f43;
+            --error-red: #e74c3c;
         }
 
         [data-theme="dark"] {
@@ -37,6 +38,20 @@
             transition: background 0.3s, color 0.3s;
         }
 
+        /* --- Shake Animation --- */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20% { transform: translateX(-10px); }
+            40% { transform: translateX(10px); }
+            60% { transform: translateX(-10px); }
+            80% { transform: translateX(10px); }
+        }
+        .shake-active {
+            animation: shake 0.4s ease-in-out;
+            border: 2px solid var(--error-red) !important;
+            border-radius: 16px;
+        }
+
         .main-content { flex: 1; }
 
         .brand-header {
@@ -52,7 +67,6 @@
         
         h2 { text-align: center; color: var(--primary-blue); margin-top: 5px; }
 
-        /* Unified styling for Inputs and Buttons */
         input, button {
             padding: 18px;
             font-size: 1.25rem;
@@ -61,10 +75,11 @@
             box-sizing: border-box;
             background: var(--card-bg);
             color: var(--text-color);
-            height: 65px; /* Forced uniform height */
+            height: 65px;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.2s;
         }
 
         input { width: 100%; text-align: center; }
@@ -109,7 +124,6 @@
             overflow-y: auto;
             border: 1px solid var(--border-color);
             font-size: 0.9rem;
-            line-height: 1.5;
         }
 
         .log-entry { margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px; }
@@ -133,9 +147,7 @@
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            padding: 5px;
-            height: auto;
-            width: auto;
+            z-index: 100;
         }
 
         footer {
@@ -152,11 +164,7 @@
 
     <div class="main-content">
         <div class="brand-header">
-            made with 
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python"> 
-            Python and 
-            <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" alt="PyScript"> 
-            PyScript
+            made with <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"> Python and <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg"> PyScript
         </div>
         <h2>Endless Math Quiz</h2>
         
@@ -172,9 +180,9 @@
 
         <div id="game-area" style="display:none;">
             <p id="question-display"></p>
-            <div class="input-row">
+            <div class="input-row" id="input-container">
                 <button id="minus-btn" py-click="toggle_minus">±</button>
-                <input type="number" id="answer-input" inputmode="numeric" placeholder="Enter answer">
+                <input type="number" id="answer-input" inputmode="numeric" placeholder="?">
             </div>
             <button id="submit-btn" class="action-btn" py-click="check_answer">Submit My Answer</button>
             <div id="output"></div>
@@ -183,7 +191,7 @@
 
     <footer>
         &copy; Andi Dinata 2026 | Common Share | 
-        <a href="https://colabcoding.github.io" target="_blank" style="color:var(--primary-blue)">colabcoding.github.io</a><br>
+        <a href="https://colabcoding.github.io" target="_blank" style="color:var(--primary-blue)">MIT License</a><br>
         Follow us: <a href="https://instagram.com/colab.code" target="_blank" style="color:var(--primary-blue)">@colab.code</a>
     </footer>
 
@@ -197,6 +205,18 @@
         } else {
             body.setAttribute('data-theme', 'dark');
             btn.innerText = '🌙';
+        }
+    }
+
+    async function nativeShare(name, correct) {
+        const text = `I just got ${correct} correct answers on Endless Math Quiz! Can you beat me?`;
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: 'Math Quiz Result', text: text, url: window.location.href });
+            } catch (err) { console.log("Share cancelled"); }
+        } else {
+            navigator.clipboard.writeText(text + " " + window.location.href);
+            alert("Score copied to clipboard!");
         }
     }
 </script>
@@ -221,7 +241,6 @@ def start_game(event):
     state["player"] = name if name else "Friend"
     document.querySelector("#setup-area").style.display = "none"
     document.querySelector("#game-area").style.display = "block"
-    log(f"Good luck, {state['player']}!")
     generate_question()
 
 def toggle_minus(event):
@@ -241,23 +260,33 @@ def generate_question():
     document.querySelector("#answer-input").focus()
 
 def check_answer(event):
+    container = document.querySelector("#input-container")
+    container.classList.remove("shake-active") # Reset animation
+    
     raw_val = document.querySelector("#answer-input").value.strip()
     if not raw_val or raw_val == "-": return
+    
     try:
         user_ans = int(raw_val)
     except: return
     
     duration = round(time.time() - state["current_q_start"], 2)
+    
     if user_ans == state["correct_answer"]:
         state["correct_count"] += 1
         msg = f"<span class='correct-msg'>Great correct!</span> {user_ans} (took {duration}s)"
+        log(msg, True)
     else:
         state["incorrect_count"] += 1
+        # Trigger Shake
+        container.classList.add("shake-active")
         msg = f"<span class='wrong-msg'>Ups, sorry!</span> Answer was {state['correct_answer']} (took {duration}s)"
+        log(msg, True)
     
-    log(msg, True)
-    if state["incorrect_count"] >= 3: end_game()
-    else: generate_question()
+    if state["incorrect_count"] >= 3: 
+        end_game()
+    else: 
+        generate_question()
 
 def save_score(name, correct, score):
     data = window.localStorage.getItem("quiz_leaderboard")
@@ -285,15 +314,9 @@ def end_game():
             <h3>Game over, {state['player']}!</h3>
             <p>Score: <b>{score}%</b> | Correct: <b>{state['correct_count']}</b></p>
             <button onclick="window.location.reload()" class="action-btn">Play Again?</button>
-            <button id="copy-btn" class="action-btn share-btn">Copy Link to Share</button>
+            <button class="action-btn share-btn" onclick="nativeShare('{state['player']}', {state['correct_count']})">Share My Score 📱</button>
         </div>
     """
-    
-    def copy_link(event):
-        window.navigator.clipboard.writeText(window.location.href)
-        document.querySelector("#copy-btn").innerText = "Link Copied! ✅"
-    
-    document.querySelector("#copy-btn").onclick = copy_link
 
 def log(message, is_html=False):
     out = document.querySelector("#output")
