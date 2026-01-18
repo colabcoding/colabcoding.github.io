@@ -18,6 +18,7 @@
             --accent-orange: #ff9f43;
             --error-red: #e74c3c;
             --success-green: #27ae60;
+            --footer-bg: rgba(26, 26, 26, 0.98);
         }
 
         [data-theme="dark"] {
@@ -29,177 +30,193 @@
         }
 
         body { 
-            font-family: 'Segoe UI', Roboto, sans-serif; 
-            padding: 15px; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
             background-color: var(--bg-color);
-            max-width: 480px;
-            margin: 0 auto;
             color: var(--text-color);
+            margin: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            transition: background 0.3s, color 0.3s;
-            overflow-x: hidden;
+            transition: background 0.3s;
         }
 
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            20% { transform: translateX(-10px); }
-            40% { transform: translateX(10px); }
-            60% { transform: translateX(-10px); }
-            80% { transform: translateX(10px); }
-        }
-        .shake-active {
-            animation: shake 0.4s ease-in-out;
-            border: 2px solid var(--error-red) !important;
+        .main-content { 
+            flex: 1; 
+            padding: 20px;
+            max-width: 480px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+            padding-bottom: 100px; /* Space for footer */
         }
 
-        .main-content { flex: 1; z-index: 1; }
-
+        /* Branding & UI Elements */
         .brand-header {
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #888;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
-        .brand-header img { height: 18px; width: auto; }
-        
-        h2 { text-align: center; color: var(--primary-blue); margin-top: 5px; }
+        .brand-header img { height: 16px; }
+
+        h2 { text-align: center; color: var(--primary-blue); margin-bottom: 25px; }
 
         input, button {
-            padding: 18px;
-            font-size: 1.25rem;
-            border-radius: 16px;
+            border-radius: 12px;
             border: 2px solid var(--border-color);
-            box-sizing: border-box;
-            background: var(--card-bg);
-            color: var(--text-color);
-            height: 65px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
         }
 
-        input { width: 100%; text-align: center; }
-        input:focus { border-color: var(--primary-blue); outline: none; }
-
-        .input-row { display: flex; gap: 12px; margin: 20px 0; border-radius: 16px; }
-
-        #minus-btn {
-            width: 85px;
-            background-color: var(--accent-orange);
-            color: white;
-            border: none;
-            font-size: 1.6rem;
-            flex-shrink: 0;
-            cursor: pointer;
+        input {
+            width: 100%;
+            padding: 15px;
+            text-align: center;
+            background: var(--card-bg);
+            color: var(--text-color);
+            box-sizing: border-box;
         }
 
         .action-btn {
             width: 100%;
+            padding: 15px;
+            margin-top: 10px;
             background-color: var(--primary-blue);
             color: white;
             border: none;
             font-weight: bold;
             cursor: pointer;
-            margin-top: 10px;
         }
 
         .secondary-btn { background-color: #95a5a6; }
-        .share-btn { background-color: #6c5ce7; }
 
+        /* Game Layout */
         #question-display {
-            font-size: 3rem;
+            font-size: 3.5rem;
             text-align: center;
-            font-weight: 700;
-            margin: 20px 0;
+            font-weight: 800;
+            margin: 30px 0;
+        }
+
+        .input-row { display: flex; gap: 10px; margin-bottom: 15px; }
+        
+        #minus-btn {
+            width: 70px;
+            background: var(--accent-orange);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         #output { 
             background: var(--card-bg); 
             padding: 15px; 
-            border-radius: 16px; 
+            border-radius: 12px; 
             margin-top: 20px; 
-            height: 150px; 
+            height: 120px; 
             overflow-y: auto;
             border: 1px solid var(--border-color);
             font-size: 0.9rem;
         }
 
-        .log-entry { margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px; }
-        .correct-msg { color: var(--success-green); font-weight: bold; }
-        .wrong-msg { color: var(--error-red); font-weight: bold; }
-
-        .leaderboard-box {
-            background: var(--card-bg);
-            padding: 20px;
-            border-radius: 16px;
-            margin-top: 20px;
-            border: 1px solid var(--border-color);
-            text-align: center;
+        /* Footer - Centered and Sticky */
+        footer {
+            background: var(--footer-bg);
+            color: #cbd5e0;
+            padding: 15px 0;
+            font-size: 0.7rem;
+            border-top: 2px solid #ed8936;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
         }
 
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            max-width: 90%;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        footer a { color: #f6e05e; text-decoration: none; font-weight: bold; }
+        footer .divider { color: #4a5568; }
+
         .dark-mode-toggle {
-            position: fixed;
+            position: absolute;
             top: 15px;
             right: 15px;
             background: none;
             border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            z-index: 100;
         }
 
-        footer {
-            text-align: center;
-            font-size: 0.75rem;
-            color: #888;
-            padding: 20px 0;
+        /* Animations */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
         }
+        .shake-active { animation: shake 0.3s ease-in-out; border-color: var(--error-red) !important; }
+        
+        .correct-msg { color: var(--success-green); font-weight: bold; }
+        .wrong-msg { color: var(--error-red); font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <button class="dark-mode-toggle" id="theme-btn" onclick="toggleTheme()">☀️</button>
+    <button class="dark-mode-toggle" id="theme-btn" onclick="toggleTheme()">🌙</button>
 
     <div class="main-content">
         <div class="brand-header">
-            made with <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"> Python and <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg"> PyScript
+            made with <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"> Python & <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg"> PyScript
         </div>
+        
         <h2>Endless Math Quiz</h2>
         
         <div id="setup-area">
-            <input type="text" id="player-name" placeholder="Hi! What's your name?">
-            <button id="start-btn" class="action-btn" py-click="start_game">Let's Play!</button>
-            <button id="toggle-lb-btn" class="action-btn secondary-btn" onclick="toggleLeaderboard()">Show Leaderboard 🏆</button>
+            <input type="text" id="player-name" placeholder="Enter your name to start...">
+            <button id="start-btn" class="action-btn" py-click="start_game">Play Now</button>
+            <button id="toggle-lb-btn" class="action-btn secondary-btn" onclick="toggleLeaderboard()">Global Rankings 🏆</button>
             
-            <div id="leaderboard-display" class="leaderboard-box" style="display: none;">
-                <strong style="display:block; margin-bottom:10px;">🏆 Global Top 5</strong>
+            <div id="leaderboard-display" style="display: none; margin-top: 15px; text-align: center;">
                 <div id="leaderboard-list"></div>
             </div>
         </div>
 
         <div id="game-area" style="display:none;">
-            <p id="question-display"></p>
+            <p id="question-display">--</p>
             <div class="input-row" id="input-container">
                 <button id="minus-btn" py-click="toggle_minus">±</button>
                 <input type="number" id="answer-input" inputmode="numeric" placeholder="?">
             </div>
-            <button id="submit-btn" class="action-btn" py-click="check_answer">Submit My Answer</button>
+            <button id="submit-btn" class="action-btn" py-click="check_answer">Submit Answer</button>
             <div id="output"></div>
         </div>
     </div>
 
     <footer>
-        <span style="display:block; margin-bottom:5px">Licensed under Creative Commons BY-NC-SA 4.0</span>
-        &copy; Andi Dinata 2026 | Website : 
-        <a href="https://colabcoding.github.io" target="_blank">colabcoding.github.io</a><br>
-        Email: <a href="mailto:colab.code@outlook.com">colab.code@outlook.com</a> | 
-        Instagram: <a href="https://instagram.com/colab.code" target="_blank">@colab.code</a>
+        <div class="footer-content">
+            <span>&copy; Andi Dinata 2026</span>
+            <span class="divider">|</span>
+            <span>CC BY-NC-SA 4.0</span>
+            <span class="divider">|</span>
+            <a href="https://colabcoding.github.io" target="_blank">colabcoding.github.io</a>
+            <span class="divider">|</span>
+            <a href="mailto:colab.code@outlook.com">Contact</a>
+            <span class="divider">|</span>
+            <a href="https://instagram.com/colab.code" target="_blank">@colab.code</a>
+        </div>
     </footer>
 
 <script>
@@ -208,60 +225,38 @@
         const btn = document.getElementById('theme-btn');
         if (body.getAttribute('data-theme') === 'dark') {
             body.removeAttribute('data-theme');
-            btn.innerText = '☀️';
+            btn.innerText = '🌙';
         } else {
             body.setAttribute('data-theme', 'dark');
-            btn.innerText = '🌙';
+            btn.innerText = '☀️';
         }
     }
 
     function toggleLeaderboard() {
         const lb = document.getElementById('leaderboard-display');
-        const btn = document.getElementById('toggle-lb-btn');
-        if (lb.style.display === "none") {
-            lb.style.display = "block";
-            btn.innerText = "Hide Leaderboard";
-        } else {
-            lb.style.display = "none";
-            btn.innerText = "Show Leaderboard 🏆";
-        }
+        lb.style.display = lb.style.display === "none" ? "block" : "none";
     }
 
-    // FIREWORKS TRIGGER
     function launchFireworks() {
-        var duration = 2 * 1000;
-        var end = Date.now() + duration;
+        const duration = 2000;
+        const animationEnd = Date.now() + duration;
+        const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
-        (function frame() {
-            confetti({
-                particleCount: 3,
-                angle: 60,
-                spread: 55,
-                origin: { x: 0 },
-                colors: ['#4a90e2', '#ff9f43', '#27ae60']
-            });
-            confetti({
-                particleCount: 3,
-                angle: 120,
-                spread: 55,
-                origin: { x: 1 },
-                colors: ['#4a90e2', '#ff9f43', '#27ae60']
-            });
-
-            if (Date.now() < end) {
-                requestAnimationFrame(frame);
-            }
-        }());
+        const interval = setInterval(function() {
+            const timeLeft = animationEnd - Date.now();
+            if (timeLeft <= 0) return clearInterval(interval);
+            const particleCount = 50 * (timeLeft / duration);
+            confetti({...defaults, particleCount, origin: { x: Math.random(), y: Math.random() - 0.2 }});
+        }, 250);
     }
 
     async function nativeShare(name, correct) {
-        const text = `I just got ${correct} correct answers on Endless Math Quiz! Can you beat me?`;
+        const text = `I scored ${correct} on Endless Math Quiz! Try to beat me!`;
         if (navigator.share) {
-            try {
-                await navigator.share({ title: 'Math Quiz Result', text: text, url: window.location.href });
-            } catch (err) { console.log("Share cancelled"); }
+            try { await navigator.share({ title: 'Math Quiz', text: text, url: window.location.href }); } 
+            catch (err) {}
         } else {
-            navigator.clipboard.writeText(text + " " + window.location.href);
+            navigator.clipboard.writeText(text);
             alert("Score copied to clipboard!");
         }
     }
@@ -274,111 +269,95 @@ import json
 from pyscript import document, window
 
 state = {
-    "player": "",
-    "correct_count": 0,
-    "incorrect_count": 0,
-    "current_q_start": 0,
-    "correct_answer": 0,
-    "operators": ['*', '+', '-']
+    "player": "Friend",
+    "correct": 0,
+    "wrong": 0,
+    "start_time": 0,
+    "answer": 0
 }
 
 def start_game(event):
     name = document.querySelector("#player-name").value.strip()
-    state["player"] = name if name else "Friend"
+    if name: state["player"] = name
     document.querySelector("#setup-area").style.display = "none"
     document.querySelector("#game-area").style.display = "block"
-    generate_question()
+    new_q()
 
 def toggle_minus(event):
-    el = document.querySelector("#answer-input")
-    val = el.value
-    if not val: el.value = "-"
-    elif val.startswith("-"): el.value = val[1:]
-    else: el.value = "-" + val
+    inp = document.querySelector("#answer-input")
+    val = inp.value
+    inp.value = val[1:] if val.startswith("-") else "-" + val
 
-def generate_question():
-    state["current_q_start"] = time.time()
-    n1, n2 = random.randint(1, 15), random.randint(1, 15)
-    op = random.choice(state["operators"])
-    state["correct_answer"] = eval(f"{n1} {op} {n2}")
-    document.querySelector("#question-display").innerText = f"{n1} {op} {n2} = ?"
+def new_q():
+    state["start_time"] = time.time()
+    n1, n2 = random.randint(1, 12), random.randint(1, 12)
+    op = random.choice(['+', '-', '*'])
+    state["answer"] = eval(f"{n1} {op} {n2}")
+    document.querySelector("#question-display").innerText = f"{n1} {op} {n2}"
     document.querySelector("#answer-input").value = ""
     document.querySelector("#answer-input").focus()
 
 def check_answer(event):
+    ans_field = document.querySelector("#answer-input")
     container = document.querySelector("#input-container")
     container.classList.remove("shake-active")
     
-    raw_val = document.querySelector("#answer-input").value.strip()
-    if not raw_val or raw_val == "-": return
-    
     try:
-        user_ans = int(raw_val)
+        val = int(ans_field.value)
     except: return
+
+    dt = round(time.time() - state["start_time"], 1)
     
-    duration = round(time.time() - state["current_q_start"], 2)
-    
-    if user_ans == state["correct_answer"]:
-        state["correct_count"] += 1
-        
-        # LOGIC: Call fireworks for the first correct answer AND every 10th correct answer
-        if state["correct_count"] == 1 or state["correct_count"] % 10 == 0:
+    if val == state["answer"]:
+        state["correct"] += 1
+        if state["correct"] == 1 or state["correct"] % 10 == 0:
             window.launchFireworks()
-            
-        msg = f"<span class='correct-msg'>Great! Correct.</span> {user_ans} (took {duration}s)"
-        log(msg, True)
-        generate_question()
+        log(f"<span class='correct-msg'>Correct!</span> {val} in {dt}s", True)
+        new_q()
     else:
-        state["incorrect_count"] += 1
+        state["wrong"] += 1
         container.classList.add("shake-active")
-        msg = f"<span class='wrong-msg'>Oops!</span> Answer was {state['correct_answer']} (took {duration}s)"
-        log(msg, True)
-        
-        if state["incorrect_count"] >= 3: 
-            end_game()
-        else:
-            generate_question()
+        log(f"<span class='wrong-msg'>Wrong!</span> Was {state['answer']} ({dt}s)", True)
+        if state["wrong"] >= 3: end_game()
+        else: new_q()
 
-def save_score(name, correct):
-    data = window.localStorage.getItem("quiz_leaderboard")
-    leaderboard = json.loads(data) if data else []
-    leaderboard.append({"name": name, "correct": correct})
-    leaderboard = sorted(leaderboard, key=lambda x: x['correct'], reverse=True)[:5]
-    window.localStorage.setItem("quiz_leaderboard", json.dumps(leaderboard))
+def log(msg, html=False):
+    out = document.querySelector("#output")
+    div = document.createElement("div")
+    div.style.borderBottom = "1px solid var(--border-color)"
+    div.style.padding = "5px 0"
+    if html: div.innerHTML = msg
+    else: div.innerText = msg
+    out.prepend(div)
 
-def update_leaderboard_ui():
-    data = window.localStorage.getItem("quiz_leaderboard")
-    list_div = document.querySelector("#leaderboard-list")
-    if not data:
-        list_div.innerText = "No scores yet."
-        return
-    lb = json.loads(data)
-    html = "".join([f"<div style='margin-bottom:5px; border-bottom:1px solid var(--border-color);'>#{i+1} {x['name']} — <b>{x['correct']} pts</b></div>" for i, x in enumerate(lb)])
-    list_div.innerHTML = html
+def save_score():
+    raw = window.localStorage.getItem("math_lb")
+    lb = json.loads(raw) if raw else []
+    lb.append({"name": state["player"], "score": state["correct"]})
+    lb = sorted(lb, key=lambda x: x['score'], reverse=True)[:5]
+    window.localStorage.setItem("math_lb", json.dumps(lb))
 
 def end_game():
-    save_score(state["player"], state["correct_count"])
-    total = state["correct_count"] + state["incorrect_count"]
-    accuracy = round(100 * (state["correct_count"] / total), 1) if total > 0 else 0
+    save_score()
+    acc = round(100 * (state["correct"]/(state["correct"]+state["wrong"])), 1)
     document.querySelector("#game-area").innerHTML = f"""
-        <div style="text-align:center;" class="leaderboard-box">
-            <h3>Game over, {state['player']}!</h3>
-            <p>Accuracy: <b>{accuracy}%</b></p>
-            <p>Total Correct: <b>{state['correct_count']}</b></p>
-            <button onclick="window.location.reload()" class="action-btn">Play Again</button>
-            <button class="action-btn share-btn" onclick="nativeShare('{state['player']}', {state['correct_count']})">Share My Score 📱</button>
+        <div style="text-align:center; padding: 20px; background:var(--card-bg); border-radius:15px; border:1px solid var(--border-color);">
+            <h3>Game Over, {state['player']}!</h3>
+            <p style="font-size:1.5rem;">Score: <b>{state['correct']}</b></p>
+            <p>Accuracy: {acc}%</p>
+            <button onclick="window.location.reload()" class="action-btn">Restart</button>
+            <button class="action-btn" style="background:#6c5ce7" onclick="nativeShare('{state['player']}', {state['correct']})">Share Result</button>
         </div>
     """
 
-def log(message, is_html=False):
-    out = document.querySelector("#output")
-    new_entry = document.createElement("div")
-    new_entry.className = "log-entry"
-    if is_html: new_entry.innerHTML = message
-    else: new_entry.innerText = message
-    out.prepend(new_entry)
+def init_lb():
+    raw = window.localStorage.getItem("math_lb")
+    if not raw: return
+    lb = json.loads(raw)
+    html = "<b>Top Scores</b><br>" + "".join([f"#{i+1} {x['name']}: {x['score']} pts<br>" for i,x in enumerate(lb)])
+    document.querySelector("#leaderboard-list").innerHTML = html
 
-update_leaderboard_ui()
+init_lb()
 </script>
 </body>
 </html>
