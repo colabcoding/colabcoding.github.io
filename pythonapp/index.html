@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python & PyScript Projects</title>
+    <style>
+        :root {
+            --bg-color: #f0f2f5;
+            --text-main: #1c1e21;
+            --text-sub: #606770;
+            --tile-bg: #ffffff;
+            --tile-border: #dddddd;
+            --tile-shadow: rgba(0,0,0,0.08);
+            --header-color: #3776ab;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a202c;
+            --text-main: #f7fafc;
+            --text-sub: #a0aec0;
+            --tile-bg: #2d3748;
+            --tile-border: #4a5568;
+            --tile-shadow: rgba(0,0,0,0.3);
+            --header-color: #4da6ff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 40px 20px 80px 20px; /* Extra bottom padding for fixed footer */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Theme Toggle Button */
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--tile-bg);
+            border: 1px solid var(--tile-border);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--text-main);
+            font-weight: bold;
+            box-shadow: 0 2px 5px var(--tile-shadow);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            height: 40px;
+            width: auto;
+        }
+
+        h1 {
+            color: var(--header-color);
+            font-size: 2.2rem;
+            margin: 0;
+        }
+
+        .subtitle {
+            color: var(--text-sub);
+            font-size: 1.1rem;
+            margin-top: 8px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        @media (max-width: 1024px) { .container { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 600px) { .container { grid-template-columns: 1fr; } }
+
+        .tile-link { text-decoration: none; color: inherit; display: block; }
+
+        .tile {
+            background: var(--tile-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px var(--tile-shadow);
+            transition: all 0.25s ease;
+            border: 1px solid var(--tile-border);
+        }
+
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px var(--tile-shadow);
+            border-color: var(--header-color);
+        }
+
+        .preview-box {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 45px;
+            flex-shrink: 0;
+        }
+
+        .tile-content { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; }
+        .tile-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; color: var(--header-color); }
+        .tile-desc { font-size: 0.85rem; line-height: 1.4; color: var(--text-sub); }
+
+        .empty-tile {
+            background: var(--bg-color);
+            border: 2px dashed var(--tile-border);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-sub);
+            height: 280px;
+            box-sizing: border-box;
+            opacity: 0.6;
+        }
+
+        /* Footer Styling */
+        footer {
+            position: fixed; bottom: 0; width: 100%; background: rgba(0,0,0,0.95);
+            color: #cbd5e0; text-align: center; padding: 8px 0; font-size: 0.75rem;
+            border-top: 1px solid #ed8936; z-index: 50;
+        }
+        footer .footer-content { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 900px; margin: 0 auto; }
+        footer a { color: #f6e05e; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body data-theme="light">
+
+    <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python Logo">
+            <img src="https://pyscript.net/assets/images/pyscript-sticker-black.svg" alt="PyScript Logo">
+        </div>
+        <h1>Python Projects</h1>
+        <p class="subtitle">Made with Python and PyScript</p>
+    </header>
+
+    <div class="container">
+        <a href="https://colabcoding.github.io/pythonapp/math_quiz/index.html" class="tile-link">
+            <div class="tile">
+                <div class="preview-box" style="background: #3776ab; color: white;">
+                    <span>&plus;&minus;&times;&divide;</span>
+                </div>
+                <div class="tile-content">
+                    <div class="tile-title">Math Quiz</div>
+                    <div class="tile-desc">Interactive arithmetic challenges driven by Python logic.</div>
+                </div>
+            </div>
+        </a>
+
+        <a href="https://colabcoding.github.io/pythonapp/math_licenseplate/index.html" class="tile-link">
+            <div class="tile">
+                <div class="preview-box" style="background: #ffd343; color: #2b5b84;">
+                    <span>&#128663;</span>
+                </div>
+                <div class="tile-content">
+                    <div class="tile-title">License Plate Math</div>
+                    <div class="tile-desc">Generate math problems using vehicle registration patterns.</div>
+                </div>
+            </div>
+        </a>
+
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+        <div class="empty-tile">New Project</div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <span>&copy; Andi Dinata 2026</span>
+            <span class="divider">|</span>
+            <span>CC BY-NC-SA 4.0</span>
+            <span class="divider">|</span>
+            <a href="https://colabcoding.github.io" target="_blank">colabcoding.github.io</a>
+            <span class="divider">|</span>
+            <a href="mailto:colab.code@outlook.com">Email us</a>
+            <span class="divider">|</span>
+            <a href="https://instagram.com/colab.code" target="_blank">@colab.code</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            body.setAttribute('data-theme', newTheme);
+        }
+    </script>
+
+</body>
+</html>
