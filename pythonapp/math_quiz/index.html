@@ -296,7 +296,7 @@ def toggle_minus(event):
 
 def generate_question():
     state["current_q_start"] = time.time()
-    n1, n2 = random.randint(1, 20), random.randint(1, 20)
+    n1, n2 = random.randint(1, 15), random.randint(1, 15)
     op = random.choice(state["operators"])
     state["correct_answer"] = eval(f"{n1} {op} {n2}")
     document.querySelector("#question-display").innerText = f"{n1} {op} {n2} = ?"
@@ -318,8 +318,11 @@ def check_answer(event):
     
     if user_ans == state["correct_answer"]:
         state["correct_count"] += 1
-        # CALL FIREWORKS VIA JS
-        window.launchFireworks()
+        
+        # LOGIC: Call fireworks for the first correct answer AND every 10th correct answer
+        if state["correct_count"] == 1 or state["correct_count"] % 10 == 0:
+            window.launchFireworks()
+            
         msg = f"<span class='correct-msg'>Great! Correct.</span> {user_ans} (took {duration}s)"
         log(msg, True)
         generate_question()
@@ -376,4 +379,4 @@ def log(message, is_html=False):
 update_leaderboard_ui()
 </script>
 </body>
-</html>3
+</html>
