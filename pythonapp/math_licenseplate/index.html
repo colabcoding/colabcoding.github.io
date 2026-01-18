@@ -131,7 +131,7 @@
     
     <div class="controls">
         <input type="number" id="user-answer" inputmode="numeric" pattern="[0-9]*" placeholder="?">
-        <button id="submit-btn" class="btn-go" py-click="check_answer">GO</button>
+        <button id="submit-btn" class="btn-go" py-click="check_answer">SUBMIT</button>
     </div>
 
     <div id="log-panel"></div>
@@ -154,13 +154,16 @@
     <footer>
         <div class="footer-content">
             <span>&copy; Andi Dinata 2026</span>
-            <span>|</span>
+            <span class="divider">|</span>
             <span>CC BY-NC-SA 4.0</span>
-            <span>|</span>
+            <span class="divider">|</span>
             <a href="https://colabcoding.github.io" target="_blank">colabcoding.github.io</a>
+            <span class="divider">|</span>
+            <a href="mailto:colab.code@outlook.com">Email us</a>
+            <span class="divider">|</span>
+            <a href="https://instagram.com/colab.code" target="_blank">@colab.code</a>
         </div>
     </footer>
-
     <script type="py">
         import random, string, time, json
         from pyscript import document, window
