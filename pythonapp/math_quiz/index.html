@@ -6,6 +6,8 @@
     <title>Endless Math Quiz</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+    
     <style>
         :root {
             --bg-color: #fdfbfb;
@@ -15,6 +17,7 @@
             --primary-blue: #4a90e2;
             --accent-orange: #ff9f43;
             --error-red: #e74c3c;
+            --success-green: #27ae60;
         }
 
         [data-theme="dark"] {
@@ -36,9 +39,9 @@
             flex-direction: column;
             min-height: 100vh;
             transition: background 0.3s, color 0.3s;
+            overflow-x: hidden;
         }
 
-        /* --- Shake Animation --- */
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             20% { transform: translateX(-10px); }
@@ -49,10 +52,9 @@
         .shake-active {
             animation: shake 0.4s ease-in-out;
             border: 2px solid var(--error-red) !important;
-            border-radius: 16px;
         }
 
-        .main-content { flex: 1; }
+        .main-content { flex: 1; z-index: 1; }
 
         .brand-header {
             display: flex;
@@ -85,7 +87,7 @@
         input { width: 100%; text-align: center; }
         input:focus { border-color: var(--primary-blue); outline: none; }
 
-        .input-row { display: flex; gap: 12px; margin: 20px 0; }
+        .input-row { display: flex; gap: 12px; margin: 20px 0; border-radius: 16px; }
 
         #minus-btn {
             width: 85px;
@@ -94,6 +96,7 @@
             border: none;
             font-size: 1.6rem;
             flex-shrink: 0;
+            cursor: pointer;
         }
 
         .action-btn {
@@ -106,6 +109,7 @@
             margin-top: 10px;
         }
 
+        .secondary-btn { background-color: #95a5a6; }
         .share-btn { background-color: #6c5ce7; }
 
         #question-display {
@@ -127,8 +131,8 @@
         }
 
         .log-entry { margin-bottom: 8px; border-bottom: 1px dashed var(--border-color); padding-bottom: 5px; }
-        .correct-msg { color: #27ae60; font-weight: bold; }
-        .wrong-msg { color: #e74c3c; font-weight: bold; }
+        .correct-msg { color: var(--success-green); font-weight: bold; }
+        .wrong-msg { color: var(--error-red); font-weight: bold; }
 
         .leaderboard-box {
             background: var(--card-bg);
@@ -171,10 +175,11 @@
         <div id="setup-area">
             <input type="text" id="player-name" placeholder="Hi! What's your name?">
             <button id="start-btn" class="action-btn" py-click="start_game">Let's Play!</button>
+            <button id="toggle-lb-btn" class="action-btn secondary-btn" onclick="toggleLeaderboard()">Show Leaderboard 🏆</button>
             
-            <div id="leaderboard-display" class="leaderboard-box">
-                <strong style="display:block; margin-bottom:10px;">🏆 Leaderboard</strong>
-                <div id="leaderboard-list">Loading...</div>
+            <div id="leaderboard-display" class="leaderboard-box" style="display: none;">
+                <strong style="display:block; margin-bottom:10px;">🏆 Global Top 5</strong>
+                <div id="leaderboard-list"></div>
             </div>
         </div>
 
@@ -206,6 +211,45 @@
             body.setAttribute('data-theme', 'dark');
             btn.innerText = '🌙';
         }
+    }
+
+    function toggleLeaderboard() {
+        const lb = document.getElementById('leaderboard-display');
+        const btn = document.getElementById('toggle-lb-btn');
+        if (lb.style.display === "none") {
+            lb.style.display = "block";
+            btn.innerText = "Hide Leaderboard";
+        } else {
+            lb.style.display = "none";
+            btn.innerText = "Show Leaderboard 🏆";
+        }
+    }
+
+    // FIREWORKS TRIGGER
+    function launchFireworks() {
+        var duration = 2 * 1000;
+        var end = Date.now() + duration;
+
+        (function frame() {
+            confetti({
+                particleCount: 3,
+                angle: 60,
+                spread: 55,
+                origin: { x: 0 },
+                colors: ['#4a90e2', '#ff9f43', '#27ae60']
+            });
+            confetti({
+                particleCount: 3,
+                angle: 120,
+                spread: 55,
+                origin: { x: 1 },
+                colors: ['#4a90e2', '#ff9f43', '#27ae60']
+            });
+
+            if (Date.now() < end) {
+                requestAnimationFrame(frame);
+            }
+        }());
     }
 
     async function nativeShare(name, correct) {
@@ -252,7 +296,7 @@ def toggle_minus(event):
 
 def generate_question():
     state["current_q_start"] = time.time()
-    n1, n2 = random.randint(1, 15), random.randint(1, 15)
+    n1, n2 = random.randint(1, 20), random.randint(1, 205)
     op = random.choice(state["operators"])
     state["correct_answer"] = eval(f"{n1} {op} {n2}")
     document.querySelector("#question-display").innerText = f"{n1} {op} {n2} = ?"
@@ -261,7 +305,7 @@ def generate_question():
 
 def check_answer(event):
     container = document.querySelector("#input-container")
-    container.classList.remove("shake-active") # Reset animation
+    container.classList.remove("shake-active")
     
     raw_val = document.querySelector("#answer-input").value.strip()
     if not raw_val or raw_val == "-": return
@@ -274,46 +318,49 @@ def check_answer(event):
     
     if user_ans == state["correct_answer"]:
         state["correct_count"] += 1
-        msg = f"<span class='correct-msg'>Great correct!</span> {user_ans} (took {duration}s)"
+        # CALL FIREWORKS VIA JS
+        window.launchFireworks()
+        msg = f"<span class='correct-msg'>Great! Correct.</span> {user_ans} (took {duration}s)"
         log(msg, True)
+        generate_question()
     else:
         state["incorrect_count"] += 1
-        # Trigger Shake
         container.classList.add("shake-active")
-        msg = f"<span class='wrong-msg'>Ups, sorry!</span> Answer was {state['correct_answer']} (took {duration}s)"
+        msg = f"<span class='wrong-msg'>Oops!</span> Answer was {state['correct_answer']} (took {duration}s)"
         log(msg, True)
-    
-    if state["incorrect_count"] >= 3: 
-        end_game()
-    else: 
-        generate_question()
+        
+        if state["incorrect_count"] >= 3: 
+            end_game()
+        else:
+            generate_question()
 
-def save_score(name, correct, score):
+def save_score(name, correct):
     data = window.localStorage.getItem("quiz_leaderboard")
     leaderboard = json.loads(data) if data else []
-    leaderboard.append({"name": name, "correct": correct, "score": score})
+    leaderboard.append({"name": name, "correct": correct})
     leaderboard = sorted(leaderboard, key=lambda x: x['correct'], reverse=True)[:5]
     window.localStorage.setItem("quiz_leaderboard", json.dumps(leaderboard))
 
 def update_leaderboard_ui():
     data = window.localStorage.getItem("quiz_leaderboard")
+    list_div = document.querySelector("#leaderboard-list")
     if not data:
-        document.querySelector("#leaderboard-list").innerText = "No scores yet!"
+        list_div.innerText = "No scores yet."
         return
     lb = json.loads(data)
-    html = "".join([f"<div style='margin-bottom:5px;'>{i+1}. {x['name']} - {x['correct']} pts</div>" for i, x in enumerate(lb)])
-    document.querySelector("#leaderboard-list").innerHTML = html
+    html = "".join([f"<div style='margin-bottom:5px; border-bottom:1px solid var(--border-color);'>#{i+1} {x['name']} — <b>{x['correct']} pts</b></div>" for i, x in enumerate(lb)])
+    list_div.innerHTML = html
 
 def end_game():
+    save_score(state["player"], state["correct_count"])
     total = state["correct_count"] + state["incorrect_count"]
-    score = round(100 * (state["correct_count"] / total), 1) if total > 0 else 0
-    save_score(state["player"], state["correct_count"], score)
-    
+    accuracy = round(100 * (state["correct_count"] / total), 1) if total > 0 else 0
     document.querySelector("#game-area").innerHTML = f"""
         <div style="text-align:center;" class="leaderboard-box">
             <h3>Game over, {state['player']}!</h3>
-            <p>Score: <b>{score}%</b> | Correct: <b>{state['correct_count']}</b></p>
-            <button onclick="window.location.reload()" class="action-btn">Play Again?</button>
+            <p>Accuracy: <b>{accuracy}%</b></p>
+            <p>Total Correct: <b>{state['correct_count']}</b></p>
+            <button onclick="window.location.reload()" class="action-btn">Play Again</button>
             <button class="action-btn share-btn" onclick="nativeShare('{state['player']}', {state['correct_count']})">Share My Score 📱</button>
         </div>
     """
@@ -329,4 +376,4 @@ def log(message, is_html=False):
 update_leaderboard_ui()
 </script>
 </body>
-</html>
+</html>3
