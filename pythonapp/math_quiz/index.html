@@ -296,7 +296,7 @@ def toggle_minus(event):
 
 def generate_question():
     state["current_q_start"] = time.time()
-    n1, n2 = random.randint(1, 20), random.randint(1, 205)
+    n1, n2 = random.randint(1, 20), random.randint(1, 20)
     op = random.choice(state["operators"])
     state["correct_answer"] = eval(f"{n1} {op} {n2}")
     document.querySelector("#question-display").innerText = f"{n1} {op} {n2} = ?"
