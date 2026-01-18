@@ -2,34 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Endless Math Quiz</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     <style>
-        body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
-        #output { background: #f4f4f4; padding: 10px; border-radius: 5px; margin-top: 10px; min-height: 100px; white-space: pre-line;}
-        .stats { font-weight: bold; color: #2c3e50; }
+        /* Mobile-First Styling */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            padding: 15px; 
+            line-height: 1.4; 
+            background-color: #f8f9fa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        h2 { text-align: center; color: #333; }
+
+        /* Large Touch Targets */
+        input, button {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 1.2rem; /* Larger text avoids auto-zoom on iOS */
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-sizing: border-box; /* Ensures padding doesn't break width */
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:active {
+            background-color: #0056b3;
+            transform: scale(0.98);
+        }
+
+        #question-text {
+            font-size: 1.8rem;
+            text-align: center;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        #output { 
+            background: #ffffff; 
+            padding: 15px; 
+            border-radius: 8px; 
+            margin-top: 20px; 
+            min-height: 120px; 
+            white-space: pre-line;
+            border: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .stats { 
+            font-size: 1.1rem;
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
 
     <h2>ENDLESS MATH QUIZ</h2>
+    
     <div id="setup-area">
-        <input type="text" id="player-name" placeholder="Enter your name">
+        <input type="text" id="player-name" placeholder="Enter your name...">
         <button id="start-btn" py-click="start_game">Start Quiz</button>
     </div>
 
     <div id="game-area" style="display:none;">
         <p id="question-text"></p>
-        <input type="number" id="answer-input" placeholder="Your answer">
-        <button id="submit-btn" py-click="check_answer">Submit</button>
+        <input type="number" id="answer-input" pattern="\d*" placeholder="?">
+        <button id="submit-btn" py-click="check_answer">Submit Answer</button>
         <div id="output"></div>
     </div>
 
 <script type="py">
 import random
 import time
-from pyscript import document, display
+from pyscript import document
 
 # Global game state
 state = {
@@ -62,7 +123,7 @@ def generate_question():
     question_str = f"{n1} {op} {n2}"
     state["correct_answer"] = eval(question_str)
     
-    document.querySelector("#question-text").innerText = f"Solve this: {question_str} = ?"
+    document.querySelector("#question-text").innerText = f"{question_str} = ?"
     document.querySelector("#answer-input").value = ""
     document.querySelector("#answer-input").focus()
 
@@ -71,16 +132,20 @@ def check_answer(event):
     if not user_input:
         return
     
-    answer = int(user_input)
+    try:
+        answer = int(user_input)
+    except ValueError:
+        return
+
     duration = round(time.time() - state["current_q_start"], 2)
     state["total_duration"] += duration
 
     if answer == state["correct_answer"]:
         state["correct_count"] += 1
-        log(f"Correct! (Took {duration}s)")
+        log(f"✅ Correct! ({duration}s)")
     else:
         state["incorrect_count"] += 1
-        log(f"Incorrect! The answer was {state['correct_answer']}. (Took {duration}s)")
+        log(f"❌ Incorrect! Answer was {state['correct_answer']}. ({duration}s)")
 
     if state["incorrect_count"] >= 3:
         end_game()
@@ -92,11 +157,14 @@ def end_game():
     score = round(100 * (state["correct_count"] / total), 2)
     
     document.querySelector("#game-area").innerHTML = f"""
-        <h3>GAME OVER</h3>
-        <p>Thanks {state['player'].upper()}, you played for {round(state['total_duration'], 2)} seconds.</p>
-        <p class='stats'>Correct: {state['correct_count']} | Incorrect: {state['incorrect_count']}</p>
-        <p class='stats'>Final Score: {score}%</p>
-        <button onclick="window.location.reload()">Play Again</button>
+        <div style='text-align:center;'>
+            <h3>GAME OVER</h3>
+            <p>Well played, {state['player'].upper()}!</p>
+            <div class='stats'>Correct: {state['correct_count']}</div>
+            <div class='stats'>Incorrect: {state['incorrect_count']}</div>
+            <div class='stats'>Final Score: {score}%</div>
+            <button onclick="window.location.reload()">Play Again</button>
+        </div>
     """
 
 def log(message):
