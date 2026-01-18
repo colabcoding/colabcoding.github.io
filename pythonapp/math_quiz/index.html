@@ -3,92 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Endless Math Quiz</title>
+    <title>Mobile Math Quiz</title>
     <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
     <style>
         body { 
-            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            font-family: system-ui, -apple-system, sans-serif; 
             padding: 20px; 
-            background-color: #f0f2f5;
+            background-color: #f8f9fa;
             max-width: 500px;
             margin: 0 auto;
         }
         
-        h2 { text-align: center; color: #1a73e8; margin-bottom: 30px; }
+        h2 { text-align: center; color: #333; margin-top: 40px; }
 
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        /* Large Touch Targets */
         input, button {
-            width: 100%;
             padding: 18px;
-            margin: 12px 0;
-            font-size: 1.25rem; 
+            font-size: 1.2rem;
             border-radius: 12px;
             border: 2px solid #ddd;
             box-sizing: border-box;
-            -webkit-appearance: none; /* Removes iOS default styling */
         }
 
-        input:focus {
-            outline: none;
-            border-color: #1a73e8;
-            background: #fff;
-        }
+        input { width: 100%; }
 
-        button {
-            background-color: #1a73e8;
+        /* Style for the dedicated minus button */
+        #minus-btn {
+            width: 80px;
+            background-color: #6c757d;
             color: white;
             border: none;
             font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
-        button:active {
-            transform: translateY(2px);
-            box-shadow: none;
+        button#submit-btn, button#start-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            font-weight: bold;
+            margin-top: 10px;
         }
 
         #question-text {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             text-align: center;
-            font-weight: 800;
+            font-weight: bold;
             margin: 30px 0;
-            color: #202124;
+            color: #222;
         }
 
         #output { 
-            background: #ffffff; 
+            background: white; 
             padding: 15px; 
             border-radius: 12px; 
             margin-top: 20px; 
-            height: 150px; 
+            height: 120px; 
             overflow-y: auto;
-            white-space: pre-line;
-            border: 1px solid #e0e0e0;
-            font-family: monospace;
-        }
-
-        .stats-card {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
 
-    <h2>Math Quiz</h2>
+    <h2>ENDLESS MATH QUIZ</h2>
     
     <div id="setup-area">
-        <input type="text" id="player-name" placeholder="Your Name">
+        <input type="text" id="player-name" placeholder="Name" inputmode="text">
         <button id="start-btn" py-click="start_game">Start Quiz</button>
     </div>
 
     <div id="game-area" style="display:none;">
         <p id="question-text"></p>
-        <input type="text" id="answer-input" inputmode="decimal" placeholder="Enter answer (e.g. -5)">
-        <button id="submit-btn" py-click="check_answer">Submit</button>
+        
+        <div class="input-group">
+            <input type="text" id="answer-input" inputmode="text" placeholder="Answer">
+            <button id="minus-btn" py-click="toggle_minus">−</button>
+        </div>
+        
+        <button id="submit-btn" py-click="check_answer">Submit Answer</button>
         <div id="output"></div>
     </div>
 
@@ -101,7 +102,6 @@ state = {
     "player": "",
     "correct_count": 0,
     "incorrect_count": 0,
-    "total_duration": 0,
     "current_q_start": 0,
     "correct_answer": 0,
     "operators": ['*', '+', '-']
@@ -111,17 +111,24 @@ def start_game(event):
     state["player"] = document.querySelector("#player-name").value or "Player"
     document.querySelector("#setup-area").style.display = "none"
     document.querySelector("#game-area").style.display = "block"
-    log(f"Welcome {state['player']}!")
+    log(f"Good luck, {state['player']}!")
     generate_question()
+
+def toggle_minus(event):
+    el = document.querySelector("#answer-input")
+    val = el.value
+    if val.startswith("-"):
+        el.value = val[1:]
+    else:
+        el.value = "-" + val
 
 def generate_question():
     state["current_q_start"] = time.time()
-    # To encourage negative results, we can use a smaller n1 and larger n2 for subtraction
-    n1 = random.randint(1, 15)
-    n2 = random.randint(1, 15)
+    # Random numbers that often result in negatives during subtraction
+    n1 = random.randint(1, 12)
+    n2 = random.randint(1, 20)
     op = random.choice(state["operators"])
     
-    # Ensure some variety where negative answers are likely
     question_str = f"{n1} {op} {n2}"
     state["correct_answer"] = eval(question_str)
     
@@ -130,25 +137,21 @@ def generate_question():
     document.querySelector("#answer-input").focus()
 
 def check_answer(event):
-    val = document.querySelector("#answer-input").value.strip()
-    if not val: return
+    user_input = document.querySelector("#answer-input").value.strip()
+    if not user_input or user_input == "-":
+        return
     
     try:
-        # We use float then int to handle cases where users might type -5.0
-        answer = int(float(val))
-    except ValueError:
-        log("Please enter a valid number")
+        answer = int(user_input)
+    except:
         return
-
-    duration = round(time.time() - state["current_q_start"], 2)
-    state["total_duration"] += duration
 
     if answer == state["correct_answer"]:
         state["correct_count"] += 1
-        log(f"✅ {answer} is Correct! ({duration}s)")
+        log(f"✅ Correct! ({answer})")
     else:
         state["incorrect_count"] += 1
-        log(f"❌ {val} is Wrong. Answer: {state['correct_answer']}")
+        log(f"❌ Wrong. It was {state['correct_answer']}")
 
     if state["incorrect_count"] >= 3:
         end_game()
@@ -156,15 +159,11 @@ def check_answer(event):
         generate_question()
 
 def end_game():
-    total = state["correct_count"] + state["incorrect_count"]
-    score = round(100 * (state["correct_count"] / total), 1) if total > 0 else 0
-    
     document.querySelector("#game-area").innerHTML = f"""
-        <div class="stats-card">
-            <h3>GAME OVER</h3>
-            <p style="font-size: 1.2rem;">{state['player']}, your accuracy was <strong>{score}%</strong></p>
-            <p>Correct: {state['correct_count']} | Failed: {state['incorrect_count']}</p>
-            <button onclick="window.location.reload()">Try Again</button>
+        <div style="text-align:center; padding: 20px; background: white; border-radius: 15px;">
+            <h3>Game Over!</h3>
+            <p>Score: {state['correct_count']} correct</p>
+            <button onclick="window.location.reload()" style="width:100%">Try Again</button>
         </div>
     """
 
