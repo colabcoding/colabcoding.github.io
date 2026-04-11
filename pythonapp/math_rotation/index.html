@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Rotator Pro</title>
+    
+    <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+    <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+    <style>
+        body { font-family: sans-serif; padding: 15px; background: #f4f7f6; margin: 0; }
+        .container { max-width: 500px; margin: auto; display: flex; flex-direction: column; gap: 15px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+        .input-row { display: flex; gap: 10px; margin-bottom: 12px; }
+        .input-group { flex: 1; }
+        label { display: block; margin-bottom: 4px; font-weight: bold; font-size: 0.8em; color: #666; }
+        input, select { width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; font-size: 15px; }
+        button { width: 100%; padding: 12px; background: #2c3e50; color: white; border: none; border-radius: 6px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        #plot-area { background: white; border-radius: 12px; min-height: 380px; display: flex; justify-content: center; align-items: center; }
+        .math-box { margin-top: 15px; padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #3498db; font-family: 'Courier New', Courier, monospace; font-size: 0.9em; }
+        .summary-box { margin-top: 10px; padding: 12px; background: #e8f4fd; border-radius: 8px; border-left: 4px solid #e67e22; font-family: monospace; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card">
+        <h3 style="margin-top:0">2D Matrix Rotation</h3>
+        
+        <div class="input-row">
+            <div class="input-group"><label>X</label><input type="number" id="x_val" value="4"></div>
+            <div class="input-group"><label>Y</label><input type="number" id="y_val" value="2"></div>
+        </div>
+
+        <div class="input-row">
+            <div class="input-group"><label>Degrees (°)</label><input type="number" id="degrees" value="90"></div>
+            <div class="input-group">
+                <label>Direction</label>
+                <select id="direction">
+                    <option value="CCW">CCW (+)</option>
+                    <option value="CW">CW (-)</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="input-group" style="margin-bottom:15px;">
+            <label>Y-Axis Mode</label>
+            <select id="y_axis">
+                <option value="up">Standard (Y+ Up)</option>
+                <option value="down">Canvas (Y+ Down)</option>
+            </select>
+        </div>
+
+        <button py-click="rotate_and_plot">Rotate & Plot</button>
+        
+        <div class="math-box" id="calc_display"></div>
+        <div class="summary-box" id="logic_summary"></div>
+    </div>
+
+    <div id="plot-area" class="card"></div>
+</div>
+
+<script type="py">
+import math
+import matplotlib.pyplot as plt
+from matplotlib.patches import Arc
+from pyscript import document, display
+
+def rotate_and_plot(event):
+    try:
+        # Inputs
+        x = float(document.querySelector("#x_val").value)
+        y = float(document.querySelector("#y_val").value)
+        deg = float(document.querySelector("#degrees").value)
+        direction = document.querySelector("#direction").value
+        y_mode = document.querySelector("#y_axis").value
+
+        # Standard rotation math logic
+        y_math = -y if y_mode == "down" else y
+        theta_deg = deg if direction == "CCW" else -deg
+        rad = math.radians(theta_deg)
+
+        cos_t, sin_t = math.cos(rad), math.sin(rad)
+        
+        # Matrix Calculation
+        new_x = x * cos_t - y_math * sin_t
+        new_y_math = x * sin_t + y_math * cos_t
+        final_y = -new_y_math if y_mode == "down" else new_y_math
+
+        # 1. Update Matrix Calculation Display
+        calc_str = (
+            f"x' = {x}·cos({theta_deg}°) - {y_math}·sin({theta_deg}°)\n"
+            f"y' = {x}·sin({theta_deg}°) + {y_math}·cos({theta_deg}°)\n"
+            f"Result: ({new_x:.2f}, {final_y:.2f})"
+        )
+        document.querySelector("#calc_display").innerText = calc_str
+
+        # 2. Update Logic Summary (Simplification)
+        # Identify mapping for 90, 180, 270 etc.
+        sum_x, sum_y = "x", "y"
+        if round(cos_t) == 0 and round(sin_t) == 1:   # 90 CCW
+            sum_x, sum_y = "-y", "x"
+        elif round(cos_t) == -1 and round(sin_t) == 0: # 180
+            sum_x, sum_y = "-x", "-y"
+        elif round(cos_t) == 0 and round(sin_t) == -1: # 270 CCW / 90 CW
+            sum_x, sum_y = "y", "-x"
+        else:
+            sum_x = f"({cos_t:.1f})x + ({-sin_t:.1f})y"
+            sum_y = f"({sin_t:.1f})x + ({cos_t:.1f})y"
+
+        document.querySelector("#logic_summary").innerText = f"LOGIC: x → {sum_x}, y → {sum_y}"
+
+        # 3. Plotting
+        plt.close('all')
+        document.querySelector("#plot-area").innerHTML = ""
+        fig, ax = plt.subplots(figsize=(5, 5))
+        
+        # Vectors & Labels
+        ax.quiver(0, 0, x, y, angles='xy', scale_units='xy', scale=1, color='#3498db', label='P1')
+        ax.quiver(0, 0, new_x, final_y, angles='xy', scale_units='xy', scale=1, color='#e74c3c', label='P2')
+        ax.text(x, y, f'({x},{y})', color='#3498db', fontweight='bold')
+        ax.text(new_x, final_y, f'({new_x:.1f},{final_y:.1f})', color='#e74c3c', fontweight='bold')
+
+        # Arc for Rotation
+        start_angle = math.degrees(math.atan2(y, x))
+        arc_delta = theta_deg if y_mode == "up" else -theta_deg
+        radius = math.sqrt(x**2 + y**2) * 0.4
+        arc = Arc((0,0), radius*2, radius*2, angle=0, theta1=start_angle, theta2=start_angle + arc_delta, 
+                  color="#27ae60", linestyle='--', linewidth=1.5)
+        ax.add_patch(arc)
+        ax.text(0, 0, f' θ={deg}°', color='#27ae60', fontweight='bold')
+
+        # Grid & Limits
+        mag = max(math.sqrt(x**2 + y**2), math.sqrt(new_x**2 + final_y**2)) * 1.5
+        ax.set_xlim(-mag, mag); ax.set_ylim(-mag, mag)
+        ax.axhline(0, color='black', lw=1); ax.axvline(0, color='black', lw=1)
+        ax.grid(True, alpha=0.2); ax.set_aspect('equal')
+        if y_mode == "down": ax.invert_yaxis()
+        
+        display(fig, target="plot-area")
+
+    except Exception:
+        document.querySelector("#calc_display").innerText = "Input Error"
+
+rotate_and_plot(None)
+</script>
+
+<py-config>
+    packages = ["matplotlib"]
+</py-config>
+
+</body>
+</html>
