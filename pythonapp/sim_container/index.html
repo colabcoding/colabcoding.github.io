@@ -1,0 +1,813 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Container Cargo Simulator</title>
+<style>
+  :root {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --accent: #38bdf8;
+    --accent2: #fb923c;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --field-bg: #0b1220;
+    --border: #334155;
+    --scene-bg: #111c2e;
+  }
+  body.light {
+    --bg: #f1f5f9;
+    --panel: #ffffff;
+    --accent: #0284c7;
+    --accent2: #ea580c;
+    --text: #0f172a;
+    --muted: #64748b;
+    --field-bg: #f8fafc;
+    --border: #cbd5e1;
+    --scene-bg: #e8edf3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    transition: background 0.2s, color 0.2s;
+  }
+  .layout {
+    display: flex;
+    max-width: 1340px;
+    margin: 0 auto;
+    min-height: 100vh;
+  }
+  .sidebar {
+    width: 340px;
+    flex-shrink: 0;
+    background: var(--panel);
+    padding: 24px;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    max-height: 100vh;
+  }
+  .main {
+    flex: 1;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .top-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  h1 {
+    font-size: 18px;
+    margin: 0 0 4px;
+    color: var(--accent);
+  }
+  .sub {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 0 0 20px;
+  }
+  .theme-switch {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .theme-switch span { font-size: 16px; }
+  .switch {
+    position: relative;
+    width: 40px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+  .switch input { opacity: 0; width: 0; height: 0; }
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: var(--border);
+    border-radius: 22px;
+    transition: 0.2s;
+  }
+  .slider::before {
+    content: "";
+    position: absolute;
+    width: 16px; height: 16px;
+    left: 3px; top: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  input:checked + .slider { background: var(--accent); }
+  input:checked + .slider::before { transform: translateX(18px); }
+
+  fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 12px 14px;
+  }
+  legend {
+    color: var(--accent2);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0 6px;
+  }
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--muted);
+    margin: 10px 0 4px;
+  }
+  select, input[type=number] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--field-bg);
+    color: var(--text);
+    font-size: 14px;
+  }
+  select:focus, input:focus { outline: 2px solid var(--accent); }
+  .mode-toggle {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 4px;
+  }
+  .mode-toggle button {
+    flex: 1;
+    padding: 7px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--field-bg);
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 11px;
+  }
+  .mode-toggle button.active {
+    background: var(--accent);
+    color: #04141f;
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+  .mode-panel { display: none; }
+  .mode-panel.active { display: block; }
+
+  .cargo-card {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 12px 12px;
+    margin-bottom: 10px;
+    background: var(--field-bg);
+    position: relative;
+  }
+  .cargo-card .card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+  }
+  .cargo-card .card-head .swatch {
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .cargo-card .card-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+  }
+  .cargo-card .remove-btn {
+    border: none;
+    background: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 14px;
+    line-height: 1;
+    padding: 2px 6px;
+  }
+  .cargo-card .remove-btn:hover { color: #f87171; }
+  .pallet-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 10px;
+    cursor: pointer;
+  }
+  .pallet-row input { width: auto; margin: 0; }
+
+  #add-cargo-btn {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px dashed var(--border);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+  #add-cargo-btn:hover { border-color: var(--accent); }
+
+  #run-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border-radius: 8px;
+    border: none;
+    background: linear-gradient(135deg, var(--accent), #0ea5e9);
+    color: #04141f;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #run-btn:hover { filter: brightness(1.08); }
+
+  .plot-wrap {
+    width: 100%;
+    max-width: 980px;
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 16px;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+  }
+  #scene-container {
+    width: 100%;
+    height: 500px;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: grab;
+    background: var(--scene-bg);
+  }
+  #scene-container:active { cursor: grabbing; }
+  .title-block {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .title-block .main-title {
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text);
+  }
+  .title-block .sub-title {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .warn-text {
+    font-size: 12px;
+    color: #f87171;
+    text-align: center;
+    margin-top: 6px;
+  }
+  .legend-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .legend-row .chip {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-row .chip .dot {
+    width: 9px; height: 9px;
+    border-radius: 2px;
+  }
+  .scene-wrap { position: relative; }
+  .hint {
+    font-size: 11px;
+    color: var(--muted);
+    text-align: center;
+    margin-top: 8px;
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+  <div class="sidebar">
+    <div class="top-row">
+      <div>
+        <h1>Container Cargo Simulator</h1>
+        <p class="sub">Visualize CBM utilization inside a shipping container</p>
+      </div>
+      <div class="theme-switch">
+        <span>&#9728;&#65039;</span>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="slider"></span>
+        </label>
+        <span>&#127769;</span>
+      </div>
+    </div>
+
+    <fieldset>
+      <legend>Container</legend>
+      <label for="container-type">Container type</label>
+      <select id="container-type">
+        <option value="20ft">20ft (33.2 CBM)</option>
+        <option value="40ft">40ft (67.7 CBM)</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Cargo items</legend>
+      <div id="cargo-list"></div>
+      <button id="add-cargo-btn" type="button">+ Add cargo item</button>
+    </fieldset>
+
+    <button id="run-btn" type="button">Run simulation</button>
+  </div>
+
+  <div class="main">
+    <div class="plot-wrap">
+      <div class="title-block">
+        <div class="main-title" id="main-title">Height-Prioritized Cargo Simulation: 20ft</div>
+        <div class="sub-title" id="sub-title">Load: 0.00 CBM / 33.2 CBM (0.0% Utilized)</div>
+      </div>
+      <div class="scene-wrap">
+        <div id="scene-container"></div>
+      </div>
+      <div class="warn-text" id="warn-text"></div>
+      <div class="legend-row" id="legend-row"></div>
+      <p class="hint">Drag to rotate &middot; scroll to zoom</p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function () {
+  // ============== Container math (same as original Python) ==============
+  function getContainerDimensions(containerType) {
+    if (containerType === "20ft") return { l: 5.90, w: 2.35, h: 2.39, cbm: 33.2 };
+    if (containerType === "40ft") return { l: 12.03, w: 2.35, h: 2.39, cbm: 67.7 };
+    throw new Error("Invalid container type. Choose '20ft' or '40ft'.");
+  }
+
+  const PALLET_HEIGHT = 0.15; // 150mm
+  const PALLET_COLOR = 0x9ca3af;
+
+  // Resolve a single cargo card's inputs into {l, w, h, cbm, palletized} cargo dimensions
+  // (h is the cargo box height only, not including the pallet base).
+  function resolveCargoDims(containerDims, card) {
+    const { l, w, h } = containerDims;
+    const modeCbmActive = card.querySelector(".mode-cbm-panel").className.includes("active");
+    const palletized = card.querySelector(".pallet-checkbox").checked;
+    let fillL, fillW, fillH;
+
+    if (modeCbmActive) {
+      const usableH = h - (palletized ? PALLET_HEIGHT : 0);
+      const cbmInput = parseFloat(card.querySelector(".cbm-input").value) || 0;
+      const clamped = Math.min(Math.max(0.0, cbmInput), l * w * usableH);
+      const fw = w;
+      const requiredL = clamped / (fw * usableH);
+      if (requiredL <= l) {
+        fillL = requiredL; fillW = fw; fillH = usableH;
+      } else {
+        fillL = l; fillW = fw; fillH = usableH;
+      }
+    } else {
+      const cl = parseFloat(card.querySelector(".cargo-l").value);
+      const cw = parseFloat(card.querySelector(".cargo-w").value);
+      const ch = parseFloat(card.querySelector(".cargo-h").value);
+      fillL = Math.min(isNaN(cl) ? l : cl, l);
+      fillW = Math.min(isNaN(cw) ? w : cw, w);
+      fillH = Math.min(isNaN(ch) ? h : ch, h - (palletized ? PALLET_HEIGHT : 0));
+    }
+    return { l: fillL, w: fillW, h: fillH, cbm: fillL * fillW * fillH, palletized };
+  }
+
+  // ============== Greedy guillotine bin packer (height-priority, stack when possible) ==============
+  function packCargo(containerDims, cargoDimsList) {
+    const { l: L, w: W, h: H } = containerDims;
+    let surfaces = [{ x0: 0, z0: 0, x1: L, z1: W, y: 0 }];
+    const placements = [];
+    const overflow = [];
+
+    cargoDimsList.forEach((dims, idx) => {
+      const { l, w, h } = dims;
+      if (l <= 0 || w <= 0 || h <= 0) { overflow.push(idx); return; }
+
+      let bestIdx = -1, bestScore = Infinity;
+      for (let i = 0; i < surfaces.length; i++) {
+        const s = surfaces[i];
+        const sl = s.x1 - s.x0, sw = s.z1 - s.z0;
+        if (sl >= l - 1e-9 && sw >= w - 1e-9 && s.y + h <= H + 1e-9) {
+          const leftover = sl * sw - l * w;
+          const score = s.y * 1000 + leftover; // height priority dominates, leftover breaks ties
+          if (score < bestScore) { bestScore = score; bestIdx = i; }
+        }
+      }
+
+      if (bestIdx === -1) { overflow.push(idx); return; }
+
+      const s = surfaces[bestIdx];
+      surfaces.splice(bestIdx, 1);
+      placements.push({ x: s.x0, y: s.y, z: s.z0, l, w, h, idx });
+
+      if (s.x1 - (s.x0 + l) > 1e-6) {
+        surfaces.push({ x0: s.x0 + l, z0: s.z0, x1: s.x1, z1: s.z1, y: s.y });
+      }
+      if (s.z1 - (s.z0 + w) > 1e-6) {
+        surfaces.push({ x0: s.x0, z0: s.z0 + w, x1: s.x0 + l, z1: s.z1, y: s.y });
+      }
+      surfaces.push({ x0: s.x0, z0: s.z0, x1: s.x0 + l, z1: s.z0 + w, y: s.y + h });
+    });
+
+    return { placements, overflow };
+  }
+
+  const PALETTE = [0xfb923c, 0x38bdf8, 0xa78bfa, 0x34d399, 0xf472b6, 0xfacc15, 0xf87171, 0x60a5fa];
+
+  // ============== Three.js scene ==============
+  const container = document.getElementById("scene-container");
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(window.devicePixelRatio || 1);
+  container.appendChild(renderer.domElement);
+
+  scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+  const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  dirLight.position.set(5, 8, 5);
+  scene.add(dirLight);
+
+  let dynamicGroup = new THREE.Group();
+  scene.add(dynamicGroup);
+
+  function clearDynamicGroup() {
+    while (dynamicGroup.children.length) {
+      const obj = dynamicGroup.children.pop();
+      if (obj.geometry) obj.geometry.dispose();
+      if (obj.material) {
+        if (obj.material.map) obj.material.map.dispose();
+        obj.material.dispose();
+      }
+    }
+  }
+
+  function makeTextSprite(message, color, fontPx) {
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    const fs = fontPx || 56;
+    ctx.font = `${fs}px -apple-system, Roboto, sans-serif`;
+    const metrics = ctx.measureText(message);
+    canvas.width = Math.ceil(metrics.width) + 16;
+    canvas.height = fs + 16;
+    ctx.font = `${fs}px -apple-system, Roboto, sans-serif`;
+    ctx.fillStyle = color;
+    ctx.textBaseline = "top";
+    ctx.fillText(message, 8, 4);
+    const texture = new THREE.CanvasTexture(canvas);
+    texture.needsUpdate = true;
+    const material = new THREE.SpriteMaterial({ map: texture, depthTest: false, transparent: true });
+    const sprite = new THREE.Sprite(material);
+    return { sprite, w: canvas.width, h: canvas.height };
+  }
+
+  function niceStep(maxVal, targetTicks) {
+    const raw = maxVal / targetTicks;
+    if (raw <= 0) return 1;
+    const mag = Math.pow(10, Math.floor(Math.log10(raw)));
+    const norm = raw / mag;
+    let step;
+    if (norm < 1.5) step = 1; else if (norm < 3) step = 2; else if (norm < 7) step = 5; else step = 10;
+    return step * mag;
+  }
+
+  function addAxisTicksAndLabels(group, l, w, h, isDark) {
+    const tickColor = isDark ? 0xcbd5e1 : 0x334155;
+    const textColor = isDark ? "#e2e8f0" : "#1e293b";
+    const tickMat = new THREE.LineBasicMaterial({ color: tickColor });
+    const tickLen = Math.max(l, w, h) * 0.025;
+    const labelScale = Math.max(l, w, h) * 0.013;
+
+    function addTick(p1, p2) {
+      const geo = new THREE.BufferGeometry().setFromPoints([p1, p2]);
+      group.add(new THREE.Line(geo, tickMat));
+    }
+    function addLabelSprite(text, pos, fontPx) {
+      const { sprite, w: cw, h: ch } = makeTextSprite(text, textColor, fontPx);
+      sprite.position.copy(pos);
+      const s = labelScale * (fontPx ? fontPx / 56 : 1);
+      sprite.scale.set(cw * s * 0.022, ch * s * 0.022, 1);
+      group.add(sprite);
+    }
+
+    const stepX = niceStep(l, 5);
+    for (let v = 0; v <= l + 1e-6; v += stepX) {
+      addTick(new THREE.Vector3(v, 0, 0), new THREE.Vector3(v, -tickLen, 0));
+      addLabelSprite(v.toFixed(1), new THREE.Vector3(v, -tickLen * 3.2, 0));
+    }
+    addLabelSprite("Length (m)", new THREE.Vector3(l / 2, -tickLen * 6, 0), 90);
+
+    const stepZ = niceStep(w, 4);
+    for (let v = 0; v <= w + 1e-6; v += stepZ) {
+      addTick(new THREE.Vector3(0, 0, v), new THREE.Vector3(-tickLen, 0, v));
+      addLabelSprite(v.toFixed(1), new THREE.Vector3(-tickLen * 3.4, 0, v));
+    }
+    addLabelSprite("Width (m)", new THREE.Vector3(-tickLen * 6.5, 0, w / 2), 90);
+
+    const stepY = niceStep(h, 4);
+    for (let v = 0; v <= h + 1e-6; v += stepY) {
+      addTick(new THREE.Vector3(0, v, 0), new THREE.Vector3(-tickLen, v, 0));
+      addLabelSprite(v.toFixed(1), new THREE.Vector3(-tickLen * 3.4, v, 0));
+    }
+    addLabelSprite("Height (m)", new THREE.Vector3(-tickLen * 6.5, h / 2, 0), 90);
+  }
+
+  function buildScene(containerDims, placements, isDark, cargoDimsList) {
+    clearDynamicGroup();
+    const { l, w, h } = containerDims;
+
+    const containerGeo = new THREE.BoxGeometry(l, h, w);
+    const containerMat = new THREE.MeshPhongMaterial({
+      color: 0x00bfff, transparent: true, opacity: isDark ? 0.05 : 0.07, side: THREE.DoubleSide
+    });
+    const containerMesh = new THREE.Mesh(containerGeo, containerMat);
+    containerMesh.position.set(l / 2, h / 2, w / 2);
+    dynamicGroup.add(containerMesh);
+
+    const edgeColor = isDark ? 0xe2e8f0 : 0x0f172a;
+    const containerEdges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(containerGeo),
+      new THREE.LineBasicMaterial({ color: edgeColor, linewidth: 2 })
+    );
+    containerEdges.position.copy(containerMesh.position);
+    dynamicGroup.add(containerEdges);
+
+    const cornerPositions = [];
+    [0, l].forEach((x) => [0, h].forEach((y) => [0, w].forEach((z) => cornerPositions.push(x, y, z))));
+    const cornerGeo = new THREE.BufferGeometry();
+    cornerGeo.setAttribute("position", new THREE.Float32BufferAttribute(cornerPositions, 3));
+    dynamicGroup.add(new THREE.Points(cornerGeo, new THREE.PointsMaterial({ color: 0xff0000, size: 0.08 })));
+
+    placements.forEach((p) => {
+      const d = cargoDimsList[p.idx];
+      if (d.l <= 0 || d.w <= 0 || d.h <= 0) return;
+      const color = PALETTE[p.idx % PALETTE.length];
+
+      let baseY = p.y;
+      if (d.palletized) {
+        addPallet(dynamicGroup, p.x, p.y, p.z, d.l, d.w);
+        baseY = p.y + PALLET_HEIGHT;
+      }
+
+      const geo = new THREE.BoxGeometry(d.l, d.h, d.w);
+      const mat = new THREE.MeshPhongMaterial({ color, transparent: true, opacity: 0.6 });
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(p.x + d.l / 2, baseY + d.h / 2, p.z + d.w / 2);
+      dynamicGroup.add(mesh);
+
+      const edges = new THREE.LineSegments(
+        new THREE.EdgesGeometry(geo),
+        new THREE.LineBasicMaterial({ color })
+      );
+      edges.position.copy(mesh.position);
+      dynamicGroup.add(edges);
+    });
+
+    addAxisTicksAndLabels(dynamicGroup, l, w, h, isDark);
+  }
+
+  // Builds a simple gray pallet: a thin top deck plus separated support blocks,
+  // leaving open gaps along the width axis for forklift fork insertion.
+  function addPallet(group, x, y, z, l, w) {
+    const deckH = PALLET_HEIGHT * 0.35;
+    const blockH = PALLET_HEIGHT - deckH;
+    const mat = new THREE.MeshPhongMaterial({ color: PALLET_COLOR });
+    const edgeColor = 0x4b5563;
+
+    function addBox(bx, by, bz, bl, bh, bw) {
+      const geo = new THREE.BoxGeometry(bl, bh, bw);
+      const mesh = new THREE.Mesh(geo, mat);
+      mesh.position.set(bx + bl / 2, by + bh / 2, bz + bw / 2);
+      group.add(mesh);
+      const edges = new THREE.LineSegments(geo.clone(), new THREE.LineBasicMaterial({ color: edgeColor }));
+      const edgesGeo = new THREE.EdgesGeometry(geo);
+      const edgeLines = new THREE.LineSegments(edgesGeo, new THREE.LineBasicMaterial({ color: edgeColor }));
+      edgeLines.position.copy(mesh.position);
+      group.add(edgeLines);
+    }
+
+    // Top deck spans the full cargo footprint
+    addBox(x, y + blockH, z, l, deckH, w);
+
+    // Support blocks span the full length but are separated along the width
+    // axis, leaving gaps a forklift's forks can slide into from the sides.
+    const nBlocks = 3;
+    const totalBlockFrac = 0.55;
+    const blockSegW = (w * totalBlockFrac) / nBlocks;
+    const gapW = nBlocks > 1 ? (w * (1 - totalBlockFrac)) / (nBlocks - 1) : 0;
+    let curZ = z;
+    for (let i = 0; i < nBlocks; i++) {
+      addBox(x, y, curZ, l, blockH, blockSegW);
+      curZ += blockSegW + gapW;
+    }
+  }
+
+  let isDragging = false, prevX = 0, prevY = 0;
+  let theta = (-55 * Math.PI) / 180;
+  let phi = (70 * Math.PI) / 180;
+  let radius = 10;
+  let target = new THREE.Vector3(0, 0, 0);
+
+  function updateCameraFromOrbit() {
+    camera.position.x = target.x + radius * Math.sin(phi) * Math.cos(theta);
+    camera.position.y = target.y + radius * Math.cos(phi);
+    camera.position.z = target.z + radius * Math.sin(phi) * Math.sin(theta);
+    camera.lookAt(target);
+  }
+  container.addEventListener("mousedown", (e) => { isDragging = true; prevX = e.clientX; prevY = e.clientY; });
+  window.addEventListener("mouseup", () => { isDragging = false; });
+  window.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    const dx = e.clientX - prevX, dy = e.clientY - prevY;
+    prevX = e.clientX; prevY = e.clientY;
+    theta -= dx * 0.005;
+    phi -= dy * 0.005;
+    phi = Math.max(0.15, Math.min(Math.PI - 0.15, phi));
+    updateCameraFromOrbit();
+  });
+  container.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    radius *= e.deltaY > 0 ? 1.08 : 0.92;
+    radius = Math.max(2, Math.min(60, radius));
+    updateCameraFromOrbit();
+  }, { passive: false });
+
+  function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener("resize", () => {
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+  });
+
+  // ============== Cargo card UI (dynamic list) ==============
+  const cargoList = document.getElementById("cargo-list");
+  let cargoCounter = 0;
+
+  function createCargoCard(presetMode, presetVals) {
+    const id = cargoCounter++;
+    const color = "#" + PALETTE[id % PALETTE.length].toString(16).padStart(6, "0");
+    const card = document.createElement("div");
+    card.className = "cargo-card";
+    card.dataset.cargoId = id;
+    card.innerHTML = `
+      <div class="card-head">
+        <span class="card-title"><span class="swatch" style="background:${color}"></span>Cargo ${id + 1}</span>
+        <button class="remove-btn" type="button" title="Remove">&times;</button>
+      </div>
+      <div class="mode-toggle">
+        <button type="button" class="mode-cbm-btn active">By CBM</button>
+        <button type="button" class="mode-dims-btn">By Dimensions</button>
+      </div>
+      <div class="mode-cbm-panel mode-panel active">
+        <label>Cargo volume (CBM, m&sup3;)</label>
+        <input type="number" class="cbm-input" value="${presetVals && presetVals.cbm !== undefined ? presetVals.cbm : 7.0}" min="0" step="0.1" />
+      </div>
+      <div class="mode-dims-panel mode-panel">
+        <label>Cargo length (m)</label>
+        <input type="number" class="cargo-l" value="${presetVals && presetVals.l !== undefined ? presetVals.l : 2.0}" min="0" step="0.1" />
+        <label>Cargo width (m)</label>
+        <input type="number" class="cargo-w" value="${presetVals && presetVals.w !== undefined ? presetVals.w : 2.0}" min="0" step="0.1" />
+        <label>Cargo height (m)</label>
+        <input type="number" class="cargo-h" value="${presetVals && presetVals.h !== undefined ? presetVals.h : 1.5}" min="0" step="0.1" />
+      </div>
+      <label class="pallet-row">
+        <input type="checkbox" class="pallet-checkbox" />
+        Add pallet (+150mm base)
+      </label>
+    `;
+    cargoList.appendChild(card);
+
+    const cbmBtn = card.querySelector(".mode-cbm-btn");
+    const dimsBtn = card.querySelector(".mode-dims-btn");
+    const cbmPanel = card.querySelector(".mode-cbm-panel");
+    const dimsPanel = card.querySelector(".mode-dims-panel");
+
+    function setCardMode(mode) {
+      cbmPanel.className = "mode-cbm-panel mode-panel" + (mode === "cbm" ? " active" : "");
+      dimsPanel.className = "mode-dims-panel mode-panel" + (mode === "dims" ? " active" : "");
+      cbmBtn.className = "mode-cbm-btn" + (mode === "cbm" ? " active" : "");
+      dimsBtn.className = "mode-dims-btn" + (mode === "dims" ? " active" : "");
+    }
+    cbmBtn.addEventListener("click", () => setCardMode("cbm"));
+    dimsBtn.addEventListener("click", () => setCardMode("dims"));
+    if (presetMode === "dims") setCardMode("dims");
+
+    card.querySelector(".remove-btn").addEventListener("click", () => {
+      card.remove();
+      renumberCards();
+    });
+
+    return card;
+  }
+
+  function renumberCards() {
+    Array.from(cargoList.children).forEach((card, i) => {
+      const color = "#" + PALETTE[i % PALETTE.length].toString(16).padStart(6, "0");
+      card.querySelector(".card-title").innerHTML = `<span class="swatch" style="background:${color}"></span>Cargo ${i + 1}`;
+    });
+  }
+
+  document.getElementById("add-cargo-btn").addEventListener("click", () => {
+    createCargoCard();
+  });
+
+  createCargoCard("cbm", { cbm: 7.0 });
+
+  // ============== Theme toggle ==============
+  const themeToggle = document.getElementById("theme-toggle");
+  function isDarkMode() { return !themeToggle.checked; }
+  themeToggle.addEventListener("change", () => {
+    document.body.className = themeToggle.checked ? "light" : "";
+    run();
+  });
+
+  // ============== Run / pack / render ==============
+  function run() {
+    const containerType = document.getElementById("container-type").value;
+    const containerDims = getContainerDimensions(containerType);
+    const cards = Array.from(cargoList.children);
+    const dark = isDarkMode();
+
+    if (cards.length === 0) {
+      document.getElementById("sub-title").innerText = "Add at least one cargo item.";
+      return;
+    }
+
+    const cargoDimsList = cards.map((card) => resolveCargoDims(containerDims, card));
+    const packDimsList = cargoDimsList.map((d) => ({
+      l: d.l, w: d.w, h: d.h + (d.palletized ? PALLET_HEIGHT : 0)
+    }));
+    const { placements, overflow } = packCargo(containerDims, packDimsList);
+
+    const totalCbm = placements.reduce((sum, p) => sum + cargoDimsList[p.idx].l * cargoDimsList[p.idx].w * cargoDimsList[p.idx].h, 0);
+    const utilizationPct = (totalCbm / containerDims.cbm) * 100;
+
+    document.getElementById("main-title").innerText = `Height-Prioritized Cargo Simulation: ${containerType}`;
+    document.getElementById("sub-title").innerText =
+      `Load: ${totalCbm.toFixed(2)} CBM / ${containerDims.cbm} CBM (${utilizationPct.toFixed(1)}% Utilized)`;
+
+    const warnEl = document.getElementById("warn-text");
+    warnEl.innerText = overflow.length
+      ? `Cargo ${overflow.map((i) => i + 1).join(", ")} did not fit and could not be placed.`
+      : "";
+
+    const legendRow = document.getElementById("legend-row");
+    legendRow.innerHTML = cargoDimsList.map((d, i) => {
+      const placed = placements.find((p) => p.idx === i);
+      const color = "#" + PALETTE[i % PALETTE.length].toString(16).padStart(6, "0");
+      const status = placed
+        ? `${d.l.toFixed(2)}&times;${d.w.toFixed(2)}&times;${d.h.toFixed(2)}m`
+        : "did not fit";
+      return `<span class="chip"><span class="dot" style="background:${color}"></span>Cargo ${i + 1}: ${status}</span>`;
+    }).join("");
+
+    const { l, w, h } = containerDims;
+    radius = Math.max(l, w, h) * 2.3;
+    theta = (-55 * Math.PI) / 180;
+    phi = (70 * Math.PI) / 180;
+    target.set(l / 2, h / 2, w / 2);
+    updateCameraFromOrbit();
+
+    buildScene(containerDims, placements, dark, cargoDimsList);
+  }
+
+  document.getElementById("run-btn").addEventListener("click", run);
+  document.getElementById("container-type").addEventListener("change", run);
+
+  run();
+})();
+</script>
+
+</body>
+</html>
